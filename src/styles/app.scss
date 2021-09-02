@@ -1,3 +1,4 @@
-body {
-  background: peru;
-}
+@import 'settings';
+@import 'generic';
+@import 'components';
+@import 'pages';
