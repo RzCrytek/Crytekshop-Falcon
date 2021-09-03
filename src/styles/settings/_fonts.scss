@@ -1,7 +1,7 @@
 // TODO: IMPORT URL IS ING THE APP.SCSS
 
 /*
-LATO:
+Roboto:
 thin 100
 light 300
 Regular 400
@@ -9,6 +9,10 @@ Medium 500
 bold 700
 */
 
-%font-lato {
-  font-family: 'Lato';
+%font-roboto {
+  font-family: 'Roboto';
+}
+
+%font-robotoC {
+  font-family: 'Roboto Condensed', sans-serif;
 }
