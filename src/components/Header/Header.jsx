@@ -1,4 +1,5 @@
 import React from 'react';
+import CartWidget from '../CartWidget/CartWidget';
 
 import './Header.scss';
 
@@ -24,6 +25,7 @@ const Header = () => {
           </ul>
 
           <div className="options">
+            <CartWidget />
             <a className="btn" href="#!">
               PRODUCTOS
             </a>

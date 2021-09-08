@@ -1,10 +1,12 @@
-import { Footer, Header } from './components';
+import { Footer, Header, ItemListContainer } from './components';
 
 function App() {
   return (
     <>
       <Header />
-      <main className="main"></main>
+      <main className="main">
+        <ItemListContainer />
+      </main>
       <Footer />
     </>
   );
