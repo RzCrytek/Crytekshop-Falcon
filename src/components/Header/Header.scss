@@ -61,22 +61,7 @@
       }
 
       .btn {
-        @extend %font-robotoC;
-        display: inline-block;
-        background: transparent;
         width: 150px;
-        height: 40px;
-        line-height: 40px;
-        font-size: 18px;
-        color: $white;
-        text-align: center;
-        text-decoration: none;
-        border: 1px solid $peru;
-        transition: $t-1;
-
-        &:hover {
-          background-color: $peru;
-        }
       }
     }
   }

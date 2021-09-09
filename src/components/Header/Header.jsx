@@ -26,7 +26,7 @@ const Header = () => {
 
           <div className="options">
             <CartWidget />
-            <a className="btn" href="#!">
+            <a className="btn btn--stroke" href="#!">
               PRODUCTOS
             </a>
           </div>

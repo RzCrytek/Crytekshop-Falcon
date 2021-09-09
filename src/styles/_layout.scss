@@ -17,3 +17,48 @@ code {
 .main {
   height: calc(100vh - 60px - 46px);
 }
+
+.container {
+  max-width: 1344px;
+  width: 100%;
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.card {
+  display: block;
+  width: 300px;
+  color: $c-1;
+  font-weight: 500;
+  text-decoration: none;
+
+  picture {
+    background-color: #f2f2f2;
+    display: block;
+    width: 300px;
+    height: 300px;
+  }
+
+  .summary {
+    margin-block: 16px;
+
+    .name {
+      @extend %font-robotoC;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .price {
+      @extend %font-robotoC;
+      color: $peru;
+
+      del {
+        font-size: 14px;
+        color: rgba($c-1, 0.3);
+        margin-left: 8px;
+      }
+    }
+  }
+}
