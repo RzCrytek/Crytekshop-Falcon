@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react/cjs/react.development';
+import { useEffect, useState } from 'react';
 
 import './ItemList.scss';
 import Item from '../Item/Item';

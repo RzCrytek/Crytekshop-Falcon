@@ -7,9 +7,9 @@ import './ItemCount.scss';
 const ItemCount = ({ stock, initial }) => {
   const [quantity, setQuantity] = useState(initial);
   const inStock = !!(stock && stock > 0);
-  console.log('inStock', inStock);
+  // console.log('inStock', inStock);
 
-  console.log('demo');
+  // console.log('demo');
 
   const decrease = () => {
     if (quantity > initial) {

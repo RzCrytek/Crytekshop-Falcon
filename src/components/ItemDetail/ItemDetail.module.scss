@@ -1,0 +1,24 @@
+@import './src/styles/settings';
+
+.card {
+  display: block;
+  width: 300px;
+  color: $c-1;
+  font-weight: 500;
+  text-decoration: none;
+
+  picture {
+    background-color: #f2f2f2;
+    display: block;
+    width: 300px;
+    height: 300px;
+  }
+
+  .detail {
+    margin-block: 16px;
+
+    p {
+      line-height: 16px;
+    }
+  }
+}
