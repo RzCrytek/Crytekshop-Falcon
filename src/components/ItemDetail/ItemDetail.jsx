@@ -16,7 +16,7 @@ const ItemDetail = ({ detail }) => {
           <p>Estado: {detail.status}</p>
           <p>Especie: {detail.species}</p>
           <p>Género: {detail.gender}</p>
-          <p>episodios: {detail.episode?.length}</p>
+          <p>Precio: S/. {detail.episode.length}</p>
         </div>
       </div>
 

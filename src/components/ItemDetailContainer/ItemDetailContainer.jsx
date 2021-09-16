@@ -1,9 +1,10 @@
+import React from 'react';
 import { useEffect, useState } from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail';
 
 const ItemDetailContainer = () => {
   const [data, setData] = useState([]);
-  const [loader, setLoader] = useState(false);
+  const [loader, setLoader] = useState(true);
 
   const getDetail = async () => {
     try {
@@ -25,7 +26,6 @@ const ItemDetailContainer = () => {
   };
 
   useEffect(() => {
-    setLoader(true);
     setTimeout(() => {
       getDetail();
     }, 2000);
