@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+
 import './ItemCount.scss';
 
 // import IconMinus from '../../img/icons/minus.svg';
@@ -34,7 +35,7 @@ const ItemCount = ({ stock, initial }) => {
           className="decrease"
           id="decrease"
           type="button"
-          style={{ backgroundImage: "url('img/icons/minus.svg')" }}
+          style={{ backgroundImage: "url('/img/icons/minus.svg')" }}
           onClick={decrease}
         ></button>
 
@@ -44,7 +45,7 @@ const ItemCount = ({ stock, initial }) => {
           className="increase"
           id="increase"
           type="button"
-          style={{ backgroundImage: "url('img/icons/plus.svg')" }}
+          style={{ backgroundImage: "url('/img/icons/plus.svg')" }}
           onClick={increase}
         ></button>
       </div>

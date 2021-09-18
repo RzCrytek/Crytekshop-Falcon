@@ -1,10 +1,13 @@
-import ItemCount from '../ItemCount/ItemCount';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 import * as styles from './Item.module.scss';
 
+import ItemCount from '../ItemCount/ItemCount';
+
 const Item = ({ character }) => {
   return (
-    <a className={styles.card} href="#!">
+    <Link className={styles.card} to={`/producto/${character.id}`}>
       <picture>
         {/* <img src="img/no-photo.png" alt="No hay imagen" /> */}
         <img src={character.image} alt={character.name} />
@@ -19,7 +22,7 @@ const Item = ({ character }) => {
       </div>
 
       <ItemCount stock={5} initial={1} />
-    </a>
+    </Link>
   );
 };
 

@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import './ItemList.scss';
+
 import Item from '../Item/Item';
 
 const ItemList = () => {

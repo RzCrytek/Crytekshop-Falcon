@@ -29,6 +29,7 @@
           padding-inline: 16px;
           transition: $t-1;
 
+          &.active,
           &:hover {
             color: $peru;
           }

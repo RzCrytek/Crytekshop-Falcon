@@ -1,8 +1,14 @@
-import ItemCount from '../ItemCount/ItemCount';
+import React from 'react';
+
 import * as styles from './ItemDetail.module.scss';
+
+import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetail = ({ detail }) => {
   console.log('detail:', detail);
+
+  if (!detail.length) return <p>No existe el producto</p>;
+
   return (
     <a className={styles.card} href="#!">
       <picture>
