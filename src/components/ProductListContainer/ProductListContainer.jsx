@@ -11,12 +11,12 @@ const ProductListContainer = () => {
   console.log('comics:', comics);
 
   return (
-    <div className="cards-box">
+    <section className="cards-box">
       {loader && <Loader />}
       {comics?.map((comics) => {
         return <ProductCard key={comics.id} comic={comics} />;
       })}
-    </div>
+    </section>
   );
 };
 

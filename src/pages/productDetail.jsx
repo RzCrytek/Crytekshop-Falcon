@@ -8,7 +8,6 @@ import { ProductDetailContainer } from '../components';
 
 const ProductDetailPage = () => {
   const { id } = useParams();
-  console.log('data:', id);
 
   const buttonCSS = {
     maxWidth: '150px',

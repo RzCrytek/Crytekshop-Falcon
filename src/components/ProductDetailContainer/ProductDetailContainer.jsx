@@ -6,7 +6,6 @@ import ProductDetail from '../ProductDetail/ProductDetail';
 
 const ProductDetailContainer = ({ id }) => {
   const { data: comics, loader } = useFetchProducts('/comics/' + id);
-  console.log('comic detail:', comics[0]);
 
   return <>{loader ? <Loader /> : <ProductDetail detail={comics[0]} />}</>;
 };

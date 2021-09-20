@@ -5,23 +5,16 @@ import * as styles from './ProductDetail.module.scss';
 import ItemCount from '../ItemCount/ItemCount';
 
 const ProductDetail = ({ detail }) => {
-  console.log('detail:', detail);
-
   const initialAmount = 1;
   const initialStock = 10;
+  const inStock = !!(initialStock && initialStock > 0);
 
   const pathImage = `${detail.thumbnail.path}.${detail.thumbnail.extension}`;
   const image = detail.images.length ? pathImage : '/img/no-photo.png';
 
   const [amount, setAmount] = useState(initialAmount);
 
-  console.log('cantidad desde el padre:', amount);
-
-  const onAdd = () => {
-    alert(
-      `Soy el padre de counter y resivo la cantidad desde mi hijo counter: ${amount}`
-    );
-  };
+  const onAdd = () => alert(`Se agregó ${amount} comics`);
 
   // if (!detail.length) return <p>No existe el producto</p>;
 
@@ -61,8 +54,11 @@ const ProductDetail = ({ detail }) => {
               setAmount={setAmount}
             />
 
-            {/* <button className="btn" onClick={onAdd} disabled={!inStock}> */}
-            <button className={`btn ${styles.btn}`} onClick={onAdd}>
+            <button
+              className={`btn ${styles.btn}`}
+              onClick={onAdd}
+              disabled={!inStock}
+            >
               AGREGAR A CARRITO
             </button>
           </div>
