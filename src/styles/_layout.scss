@@ -14,9 +14,18 @@ code {
     monospace;
 }
 
+h1 {
+  @extend %font-robotoC;
+  font-size: 40px;
+}
+
 h2 {
   @extend %font-robotoC;
   font-size: 24px;
+}
+
+strong {
+  font-weight: 700;
 }
 
 .main {

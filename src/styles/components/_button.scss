@@ -30,6 +30,20 @@
     border: 1px solid $peru;
   }
 
+  &--back {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .ico {
+      display: inline-block;
+      width: 10px;
+      height: 16px;
+      margin-right: 8px;
+    }
+  }
+
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;

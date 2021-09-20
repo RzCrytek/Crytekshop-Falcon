@@ -5,27 +5,25 @@ import './ItemCount.scss';
 // import IconMinus from '../../img/icons/minus.svg';
 // import IconPlus from '../../img/icons/minus.svg';
 
-const ItemCount = ({ stock, initial }) => {
+const ItemCount = ({ stock, initial, setAmount }) => {
   const [quantity, setQuantity] = useState(initial);
-  const inStock = !!(stock && stock > 0);
+  // const inStock = !!(stock && stock > 0);
   // console.log('inStock', inStock);
 
-  // console.log('demo');
+  console.log('initial desde el hijo:', initial);
 
   const decrease = () => {
     if (quantity > initial) {
       setQuantity((initialValue) => initialValue - 1);
+      setAmount(quantity - 1);
     }
   };
 
   const increase = () => {
     if (quantity < stock) {
       setQuantity((initialValue) => initialValue + 1);
+      setAmount(quantity + 1);
     }
-  };
-
-  const onAdd = () => {
-    alert(`Cantidad agregada: ${quantity}`);
   };
 
   return (
@@ -49,9 +47,9 @@ const ItemCount = ({ stock, initial }) => {
           onClick={increase}
         ></button>
       </div>
-      <button className="btn" onClick={onAdd} disabled={!inStock}>
+      {/* <button className="btn" onClick={onAdd} disabled={!inStock}>
         AGREGAR A CARRITO
-      </button>
+      </button> */}
     </>
   );
 };

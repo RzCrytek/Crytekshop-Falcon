@@ -1,5 +1,5 @@
 // import CartWidget from './CartWidget/CartWidget';
-import ItemListContainer from './ItemListContainer/ItemListContainer';
-import ItemDetailContainer from './ItemDetailContainer/ItemDetailContainer';
+import ProductListContainer from './ProductListContainer/ProductListContainer';
+import ProductDetailContainer from './ProductDetailContainer/ProductDetailContainer';
 
-export { ItemListContainer, ItemDetailContainer };
+export { ProductListContainer, ProductDetailContainer };
