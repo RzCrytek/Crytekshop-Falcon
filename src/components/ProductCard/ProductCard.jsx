@@ -3,15 +3,17 @@ import { Link } from 'react-router-dom';
 
 import * as styles from './ProductCard.module.scss';
 
-const ProductCard = ({ comic }) => {
-  console.log('comic', comic);
-  console.log('comic', comic.format);
-  console.log('comic', comic.prices.length);
+const ProductCard = ({ comic, withBuyButton }) => {
+  // console.log('comic', comic);
+  // console.log('comic', comic.format);
+  // console.log('comic', comic.prices.length);
+
+  console.log('withBuyButton:', withBuyButton);
 
   const pathImage = `${comic.thumbnail.path}.${comic.thumbnail.extension}`;
   const image = comic.images.length ? pathImage : '/img/no-photo.png';
 
-  console.log('image: ', image);
+  // console.log('image: ', image);
 
   return (
     <Link className={styles.card} to={`/producto/${comic.id}`}>
@@ -31,7 +33,7 @@ const ProductCard = ({ comic }) => {
         </p>
       </div>
 
-      <button className="btn">AGREGAR A CARRITO</button>
+      {withBuyButton && <button className="btn">AGREGAR A CARRITO</button>}
     </Link>
   );
 };

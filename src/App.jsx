@@ -7,7 +7,7 @@ import FaqPage from './pages/faq';
 import ContactPage from './pages/contact';
 import ProductsPage from './pages/products';
 import ProductDetailPage from './pages/productDetail';
-import NotFound from './pages/notFound';
+import NotFoundPage from './pages/notFound';
 // import { Footer, Header } from './pages/_includes';
 // import Layout from './pages/_layout';
 
@@ -21,7 +21,7 @@ function App() {
         <Route exact path="/Contacto" component={ContactPage} />
         <Route exact path="/productos" component={ProductsPage} />
         <Route path="/producto/:id" component={ProductDetailPage} />
-        <Route path="*" component={NotFound} />
+        <Route path="*" component={NotFoundPage} />
       </Switch>
     </Router>
   );

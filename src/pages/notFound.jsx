@@ -1,16 +1,28 @@
 import React from 'react';
-import { Header } from './_includes';
+import { Link, useHistory } from 'react-router-dom';
 
-const NotFound = () => {
+import Layout from './_layout';
+
+const NotFoundPage = () => {
+  const history = useHistory();
+
   return (
-    <>
-      <Header />
-      <main>
+    <Layout pageId="not-found">
+      <div className="container">
         <h1>no se encontró la página</h1>
         <img src="/img/no-photo.png" alt="" />
-      </main>
-    </>
+
+        <div className="buttons">
+          <button className="btn btn--primary" onClick={() => history.goBack()}>
+            Volver a la vista anterior
+          </button>
+          <Link className="btn btn--back" to="/">
+            Volver al Inicio
+          </Link>
+        </div>
+      </div>
+    </Layout>
   );
 };
 
-export default NotFound;
+export default NotFoundPage;

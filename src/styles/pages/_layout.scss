@@ -9,11 +9,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 h1 {
   @extend %font-robotoC;
   font-size: 40px;
@@ -29,7 +24,7 @@ strong {
 }
 
 .main {
-  // height: calc(100vh - 60px - 46px);
+  min-height: calc(100vh - 60px - 46px);
 
   .container {
     padding-block: 40px;

@@ -1,0 +1,28 @@
+#not-found {
+  display: flex;
+  align-items: center;
+
+  h1 {
+    text-align: center;
+  }
+
+  img {
+    max-width: 200px;
+    margin-block: 16px;
+    margin-inline: auto;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+
+    .btn {
+      width: auto;
+      padding-inline: 24px;
+
+      &--back {
+        color: $c-1;
+      }
+    }
+  }
+}
