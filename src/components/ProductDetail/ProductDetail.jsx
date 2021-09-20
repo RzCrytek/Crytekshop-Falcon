@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import * as styles from './ProductDetail.module.scss';
+import styles from './ProductDetail.module.scss';
 
 import ItemCount from '../ItemCount/ItemCount';
 

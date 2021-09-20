@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import * as styles from './ProductCard.module.scss';
+import styles from './ProductCard.module.scss';
 
 const ProductCard = ({ comic, withBuyButton }) => {
   // console.log('comic', comic);
