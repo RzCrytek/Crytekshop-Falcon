@@ -6,15 +6,31 @@ import useFetchProducts from '../../hooks/useFetchProducts';
 import Loader from '../Loader/Loader';
 import ProductCard from '../ProductCard/ProductCard';
 
-const ProductListContainer = () => {
-  const { data: comics, loader } = useFetchProducts('/comics');
+const ProductListContainer = ({
+  url = '/comics',
+  typeProduct = false,
+  year,
+}) => {
+  const { data: comics, loader } = useFetchProducts(url);
   console.log('comics:', comics);
+  console.log('year:', year);
+
+  const filterYear = comics.filter((y) => y.startYear == year);
+  const result = year ? filterYear : comics;
+
+  console.log('filterYear:', filterYear);
 
   return (
     <section className="cards-box">
       {loader && <Loader />}
-      {comics?.map((comics) => {
-        return <ProductCard key={comics.id} comic={comics} />;
+      {result?.map((comics) => {
+        return (
+          <ProductCard
+            key={comics.id}
+            comic={comics}
+            typeProduct={typeProduct}
+          />
+        );
       })}
     </section>
   );

@@ -16,15 +16,15 @@ const Header = () => {
         <nav className="nav">
           <ul className="menu">
             <li>
-              <NavLink to="/nosotros" activeClassName="active">
-                Nosotros
+              <NavLink to="/personajes" activeClassName="active">
+                Personajes
               </NavLink>
             </li>
             <li>
-              <NavLink to="/preguntas-frecuentes">Faq</NavLink>
+              <NavLink to="/series">Series</NavLink>
             </li>
             <li>
-              <NavLink to="/contacto">Contacto</NavLink>
+              <NavLink to="/events">Eventos</NavLink>
             </li>
           </ul>
 

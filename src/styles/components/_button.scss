@@ -28,6 +28,10 @@
   &--stroke {
     background: $c-1;
     border: 1px solid $peru;
+
+    &.active {
+      background-color: $peru;
+    }
   }
 
   &--back {
