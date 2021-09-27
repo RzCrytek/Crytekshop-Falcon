@@ -10,17 +10,15 @@ const useFetchProducts = (url) => {
   const [state, setState] = useState(initial);
 
   useEffect(() => {
-    setTimeout(() => {
-      getFetch(url)
-        .then((response) => {
-          console.log('response:', response);
-          setState({
-            data: response.results,
-            loader: false,
-          });
-        })
-        .catch((error) => console.error(error));
-    }, 0);
+    getFetch(url)
+      .then((response) => {
+        console.log('response:', response);
+        setState({
+          data: response.results,
+          loader: false,
+        });
+      })
+      .catch((error) => console.error(error));
   }, [url]);
 
   return state;

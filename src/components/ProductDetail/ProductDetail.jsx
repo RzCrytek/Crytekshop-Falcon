@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import styles from './ProductDetail.module.scss';
 
@@ -13,8 +14,12 @@ const ProductDetail = ({ detail }) => {
   const image = detail.images.length ? pathImage : '/img/no-photo.png';
 
   const [amount, setAmount] = useState(initialAmount);
+  const [addProduct, setAddProduct] = useState(false);
 
-  const onAdd = () => alert(`Se agregó ${amount} comics`);
+  const onAdd = () => {
+    alert(`Se agregó ${amount} comics`);
+    setAddProduct(!addProduct);
+  };
 
   // if (!detail.length) return <p>No existe el producto</p>;
 
@@ -48,19 +53,27 @@ const ProductDetail = ({ detail }) => {
           </div>
 
           <div className={styles.wrap}>
-            <ItemCount
-              stock={initialStock}
-              initial={initialAmount}
-              setAmount={setAmount}
-            />
+            {!addProduct && (
+              <ItemCount
+                stock={initialStock}
+                initial={initialAmount}
+                setAmount={setAmount}
+              />
+            )}
 
-            <button
-              className={`btn ${styles.btn}`}
-              onClick={onAdd}
-              disabled={!inStock}
-            >
-              AGREGAR A CARRITO
-            </button>
+            {addProduct ? (
+              <Link to="/cart" className={`btn ${styles.btn}`}>
+                TERMINAR MI COMPRA
+              </Link>
+            ) : (
+              <button
+                className={`btn ${styles.btn}`}
+                onClick={onAdd}
+                disabled={!inStock}
+              >
+                AGREGAR A CARRITO
+              </button>
+            )}
           </div>
         </div>
       </div>
