@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import styles from './ProductDetail.module.scss';
 
+import { useCartContext } from '../../context/CartContext';
 import ItemCount from '../ItemCount/ItemCount';
 
 const ProductDetail = ({ detail }) => {
@@ -14,11 +15,14 @@ const ProductDetail = ({ detail }) => {
   const image = detail.images.length ? pathImage : '/img/no-photo.png';
 
   const [amount, setAmount] = useState(initialAmount);
-  const [addProduct, setAddProduct] = useState(false);
+  const [isAddProduct, setIsAddProduct] = useState(false);
+
+  const { addProduct } = useCartContext();
 
   const onAdd = () => {
     alert(`Se agregó ${amount} comics`);
-    setAddProduct(!addProduct);
+    addProduct(detail, amount);
+    setIsAddProduct(isAddProduct);
   };
 
   // if (!detail.length) return <p>No existe el producto</p>;
@@ -53,7 +57,7 @@ const ProductDetail = ({ detail }) => {
           </div>
 
           <div className={styles.wrap}>
-            {!addProduct && (
+            {!isAddProduct && (
               <ItemCount
                 stock={initialStock}
                 initial={initialAmount}
@@ -61,7 +65,7 @@ const ProductDetail = ({ detail }) => {
               />
             )}
 
-            {addProduct ? (
+            {isAddProduct ? (
               <Link to="/cart" className={`btn ${styles.btn}`}>
                 TERMINAR MI COMPRA
               </Link>

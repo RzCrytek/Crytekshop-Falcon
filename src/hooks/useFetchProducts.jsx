@@ -12,7 +12,7 @@ const useFetchProducts = (url) => {
   useEffect(() => {
     getFetch(url)
       .then((response) => {
-        console.log('response:', response);
+        // console.log('response:', response);
         setState({
           data: response.results,
           loader: false,
