@@ -17,5 +17,18 @@
     line-height: 18px;
     text-align: center;
     border-radius: 50%;
+
+    sup {
+      vertical-align: sub;
+      font-size: 11px;
+    }
+
+    &.more {
+      font-size: 11px;
+
+      sup {
+        font-size: 10px;
+      }
+    }
   }
 }
