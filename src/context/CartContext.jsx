@@ -5,6 +5,7 @@ CartContext.displayName = 'CartContext';
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
+  const [cartWidgetAnimate, setCartWidgetAnimate] = useState(false);
 
   const addProduct = (product, quantity) => {
     const newProduct = { ...product, quantity };
@@ -26,7 +27,6 @@ export const CartProvider = ({ children }) => {
   };
 
   const removeProduct = (id) => {
-    console.log('remove id:', id);
     const newCart = cart.filter((item) => item.id !== id);
     return setCart(newCart);
   };
@@ -35,21 +35,52 @@ export const CartProvider = ({ children }) => {
     setCart([]);
   };
 
-  const getQuantity = () => {
-    console.log('getQuantity cart:', cart);
+  const getQuantityProducts = () => {
     const quantity = cart.reduce((acumulado, el) => acumulado + el.quantity, 0);
     return quantity;
   };
 
-  const cartWidgetRef = useRef();
+  const getTotalPriceProducts = () => {
+    const totalPrice = cart
+      .reduce((acc, el) => acc + (el.prices[0].price + 10) * el.quantity, 0)
+      .toFixed(2);
+
+    return totalPrice;
+  };
+
+  const decreaseProduct = (productId, qtyProduct) => {
+    if (qtyProduct > 1) {
+      const updateDecreaseQty = cart.map((item) =>
+        item.id === productId ? { ...item, quantity: item.quantity - 1 } : item
+      );
+
+      return setCart(updateDecreaseQty);
+    }
+  };
+
+  const increaseProduct = (productId, qtyProduct, stock) => {
+    if (qtyProduct < stock) {
+      const updateIncreaseQty = cart.map((item) =>
+        item.id === productId ? { ...item, quantity: item.quantity + 1 } : item
+      );
+
+      return setCart(updateIncreaseQty);
+    }
+  };
+
+  // const cartWidgetRef = useRef();
 
   const value = {
     cart,
-    cartWidgetRef,
+    cartWidgetAnimate,
+    setCartWidgetAnimate,
     addProduct,
     removeProduct,
     clearCart,
-    getQuantity,
+    getQuantityProducts,
+    getTotalPriceProducts,
+    decreaseProduct,
+    increaseProduct,
   };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;

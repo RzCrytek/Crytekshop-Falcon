@@ -1,23 +1,34 @@
 import React, { useState } from 'react';
+import { useCartContext } from '../../context/CartContext';
 
 import './ItemCount.scss';
 
-const ItemCount = ({ stock, initial, setAmount }) => {
-  const [quantity, setQuantity] = useState(initial);
+const ItemCount = ({
+  stock,
+  setAmount,
+  quantity: qtyProduct,
+  productId,
+  countDetail,
+}) => {
+  const [quantity, setQuantity] = useState(1);
+  const { decreaseProduct, increaseProduct } = useCartContext();
 
-  const decrease = () => {
-    if (quantity > initial) {
+  const decrement = () => {
+    if (quantity > 1) {
       setQuantity((initialValue) => initialValue - 1);
       setAmount(quantity - 1);
     }
   };
 
-  const increase = () => {
+  const increment = () => {
     if (quantity < stock) {
       setQuantity((initialValue) => initialValue + 1);
       setAmount(quantity + 1);
     }
   };
+
+  // const decrease = () => {};
+  // const increase = () => {};
 
   return (
     <>
@@ -27,17 +38,31 @@ const ItemCount = ({ stock, initial, setAmount }) => {
           id="decrease"
           type="button"
           style={{ backgroundImage: "url('/img/icons/minus.svg')" }}
-          onClick={decrease}
+          onClick={
+            countDetail
+              ? decrement
+              : () => decreaseProduct(productId, qtyProduct)
+          }
         ></button>
 
-        <input className="qty" type="text" value={quantity} disabled />
+        <input
+          className="qty"
+          type="text"
+          value={countDetail ? quantity : qtyProduct}
+          readOnly
+          disabled
+        />
 
         <button
           className="increase"
           id="increase"
           type="button"
           style={{ backgroundImage: "url('/img/icons/plus.svg')" }}
-          onClick={increase}
+          onClick={
+            countDetail
+              ? increment
+              : () => increaseProduct(productId, qtyProduct, stock)
+          }
         ></button>
       </div>
     </>

@@ -5,19 +5,24 @@ import { useCartContext } from '../../context/CartContext';
 import styles from './CartWidget.module.scss';
 
 const CartWidget = () => {
-  const { cartWidgetRef, getQuantity } = useCartContext();
+  const { cartWidgetAnimate, getQuantityProducts } = useCartContext();
+
+  const getQuantity = getQuantityProducts();
 
   const quantity =
-    getQuantity() > 9 ? (
+    getQuantity > 9 ? (
       <>
         9<sup>+</sup>
       </>
     ) : (
-      getQuantity()
+      getQuantity
     );
 
   return (
-    <button id={styles.btnCard} ref={cartWidgetRef}>
+    <button
+      id={styles['btn-card']}
+      className={cartWidgetAnimate ? styles.added : ''}
+    >
       <img src="/img/icons/cart--white.svg" alt="Cart" />
       <span className={`${styles.counter} ${quantity ? styles.more : ''}`}>
         {quantity}

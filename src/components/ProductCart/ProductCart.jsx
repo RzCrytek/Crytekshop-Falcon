@@ -33,7 +33,11 @@ const ProductCart = ({ product, removeProduct }) => {
         </div>
 
         <div className={styles.actions}>
-          {/* <ItemCount stock={10} initial={1} /> */}
+          <ItemCount
+            stock={10}
+            quantity={product.quantity}
+            productId={product.id}
+          />
           <button
             className={styles.delete_product}
             type="button"

@@ -7,7 +7,7 @@ import { useCartContext } from '../../../context/CartContext';
 import CartWidget from '../../../components/CartWidget/CartWidget';
 
 const Header = () => {
-  const { getQuantity } = useCartContext();
+  const { getQuantityProducts } = useCartContext();
 
   return (
     <header id="header">
@@ -32,7 +32,7 @@ const Header = () => {
           </ul>
 
           <div className="options">
-            {getQuantity() > 0 && (
+            {getQuantityProducts() > 0 && (
               <Link to="/cart">
                 <CartWidget />
               </Link>

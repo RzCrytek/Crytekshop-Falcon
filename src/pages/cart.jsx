@@ -8,16 +8,18 @@ import ItemCount from '../components/ItemCount/ItemCount';
 import { Link } from 'react-router-dom';
 
 const CartPage = () => {
-  const { cart, removeProduct, getQuantity } = useCartContext();
+  const { cart, removeProduct, getQuantityProducts, getTotalPriceProducts } =
+    useCartContext();
 
-  const quantity = getQuantity();
+  const quantity = getQuantityProducts();
   const messageQuantity = quantity > 1 ? 'Productos' : 'Producto';
-  console.log('cart:', cart);
+
+  console.log('cart page:', cart);
 
   return (
     <Layout pageId="cart">
       <div className="container cart-container">
-        <div className="order-details" style={{ width: '100%' }}>
+        <div className="order-details">
           <h2>
             {cart.length ? 'CARRITO DE COMPRAS' : 'CARRITO VACÍO'}{' '}
             {cart.length > 0 && (
@@ -34,14 +36,6 @@ const CartPage = () => {
                   removeProduct={removeProduct}
                 />
               ))}
-              <hr />
-              TOTAL:{' '}
-              {cart
-                .reduce(
-                  (acc, el) => acc + (el.prices[0].price + 10) * el.quantity,
-                  0
-                )
-                .toFixed(2)}
             </div>
           ) : (
             <div className="empty-cart">
@@ -51,26 +45,34 @@ const CartPage = () => {
               </Link>
             </div>
           )}
+
+          {cart.length > 0 && (
+            <div className="buttons">
+              <button className="btn btn-w-auto" type="button">
+                TOTAL: S/.{getTotalPriceProducts()} | Siguiente
+              </button>
+            </div>
+          )}
         </div>
 
-        {/* <div className="order-summary">
+        <div className="order-summary">
           <div className="summary-content">
             <h2>RESUMEN DE TU PEDIDO</h2>
             <div className="summary">
               <div className="summary-row">
-                <p className="text">Subtotal (2)</p>
-                <p className="price">S/.00.00</p>
+                <p className="text">Subtotal ({quantity})</p>
+                <p className="price">S/.{getTotalPriceProducts()}</p>
               </div>
 
               <div className="summary-row">
                 <p className="text">Envío</p>
-                <p className="price">S/.00.00</p>
+                <p className="price">GRATIS</p>
               </div>
 
               <div className="coupon-code">
                 <div className="summary-row">
                   <p className="text">Cupón de descuento</p>
-                  <p className="price">S/.00.00</p>
+                  <p className="price">S/.0.00</p>
                 </div>
 
                 <div className="apply-discount">
@@ -86,13 +88,12 @@ const CartPage = () => {
                   <strong>TOTAL</strong>
                 </p>
                 <p className="price">
-                  <strong>S/.00.00</strong>
+                  <strong>S/.{getTotalPriceProducts()}</strong>
                 </p>
               </div>
             </div>
           </div>
         </div>
-       */}
       </div>
     </Layout>
   );

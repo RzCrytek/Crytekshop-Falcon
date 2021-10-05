@@ -6,8 +6,9 @@ import styles from './ProductDetail.module.scss';
 import { useCartContext } from '../../context/CartContext';
 import ItemCount from '../ItemCount/ItemCount';
 
+const initialAmount = 1;
+
 const ProductDetail = ({ detail }) => {
-  const initialAmount = 1;
   const initialStock = 10;
   const inStock = !!(initialStock && initialStock > 0);
 
@@ -17,25 +18,17 @@ const ProductDetail = ({ detail }) => {
   const [amount, setAmount] = useState(initialAmount);
   const [isAddProduct, setIsAddProduct] = useState(false);
 
-  const { cartWidgetRef, addProduct } = useCartContext();
+  const { setCartWidgetAnimate, addProduct } = useCartContext();
 
   const onAdd = () => {
     addProduct(detail, amount);
-    setIsAddProduct(!isAddProduct);
+    setIsAddProduct(isAddProduct);
+    setCartWidgetAnimate(true);
 
-    // if (cartWidgetRef.current) {
-    //   console.log('cartWidgetRef:', cartWidgetRef);
-
-    //   // cartWidgetRef.current.classList.add('added');
-    //   cartWidgetRef.current.className = 'added';
-
-    //   setTimeout(() => {
-    //     cartWidgetRef.current.classList.remove('added');
-    //   }, 1000);
-    // }
+    setTimeout(() => {
+      setCartWidgetAnimate(false);
+    }, 500);
   };
-
-  // if (!detail.length) return <p>No existe el producto</p>;
 
   return (
     <div className={styles.row}>
@@ -70,8 +63,8 @@ const ProductDetail = ({ detail }) => {
             {!isAddProduct && (
               <ItemCount
                 stock={initialStock}
-                initial={initialAmount}
                 setAmount={setAmount}
+                countDetail
               />
             )}
 
