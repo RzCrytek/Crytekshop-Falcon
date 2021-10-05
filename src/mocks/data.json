@@ -1,0 +1,26 @@
+{
+  "products": [
+    {
+      "available": true,
+      "brand": "brand",
+      "discount_percentage": 30,
+      "id": 0,
+      "title": "Demo",
+      "description": "Esta es la descripción del producto 0",
+      "original_price": 5000,
+      "price": 10000,
+      "image": "https://cdn1.static-tgdp.com/ui/productimages/approved/std.lang.all/62/64/696264_sized_1800x1200_rev_1.jpg",
+      "stock": 5,
+      "rating": 0,
+      "published": true,
+      "categoryId": 1
+    }
+  ],
+  "categories": [
+    { "id": 0, "name": "Categoria 0" },
+    { "id": 1, "name": "Categoria 1" },
+    { "id": 2, "name": "Categoria 2" },
+    { "id": 3, "name": "Categoria 3" },
+    { "id": 4, "name": "Categoria 4" }
+  ]
+}

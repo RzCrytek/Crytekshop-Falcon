@@ -5,7 +5,7 @@ import { useCartContext } from '../../context/CartContext';
 import styles from './CartWidget.module.scss';
 
 const CartWidget = () => {
-  const { getQuantity } = useCartContext();
+  const { cartWidgetRef, getQuantity } = useCartContext();
 
   const quantity =
     getQuantity() > 9 ? (
@@ -17,7 +17,7 @@ const CartWidget = () => {
     );
 
   return (
-    <button id={styles.btnCard}>
+    <button id={styles.btnCard} ref={cartWidgetRef}>
       <img src="/img/icons/cart--white.svg" alt="Cart" />
       <span className={`${styles.counter} ${quantity ? styles.more : ''}`}>
         {quantity}

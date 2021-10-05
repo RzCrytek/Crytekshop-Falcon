@@ -145,3 +145,35 @@ button {
   padding: 0;
   cursor: pointer;
 }
+
+/*
+** OWN - DEFAULT
+*/
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input,
+select,
+textarea,
+a {
+  outline: 0;
+  box-shadow: none;
+
+  &:focus {
+    outline: 0;
+    box-shadow: none;
+  }
+}
+
+textarea {
+  height: auto;
+  resize: none;
+}

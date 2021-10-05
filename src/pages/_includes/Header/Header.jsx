@@ -3,9 +3,12 @@ import { Link, NavLink } from 'react-router-dom';
 
 import './Header.scss';
 
+import { useCartContext } from '../../../context/CartContext';
 import CartWidget from '../../../components/CartWidget/CartWidget';
 
 const Header = () => {
+  const { getQuantity } = useCartContext();
+
   return (
     <header id="header">
       <div className="container">
@@ -29,7 +32,12 @@ const Header = () => {
           </ul>
 
           <div className="options">
-            <CartWidget />
+            {getQuantity() > 0 && (
+              <Link to="/cart">
+                <CartWidget />
+              </Link>
+            )}
+
             <Link className="btn btn--stroke" to="/productos">
               PRODUCTOS
             </Link>

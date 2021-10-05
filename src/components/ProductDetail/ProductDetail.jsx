@@ -17,12 +17,22 @@ const ProductDetail = ({ detail }) => {
   const [amount, setAmount] = useState(initialAmount);
   const [isAddProduct, setIsAddProduct] = useState(false);
 
-  const { addProduct } = useCartContext();
+  const { cartWidgetRef, addProduct } = useCartContext();
 
   const onAdd = () => {
-    alert(`Se agregó ${amount} comics`);
     addProduct(detail, amount);
-    setIsAddProduct(isAddProduct);
+    setIsAddProduct(!isAddProduct);
+
+    // if (cartWidgetRef.current) {
+    //   console.log('cartWidgetRef:', cartWidgetRef);
+
+    //   // cartWidgetRef.current.classList.add('added');
+    //   cartWidgetRef.current.className = 'added';
+
+    //   setTimeout(() => {
+    //     cartWidgetRef.current.classList.remove('added');
+    //   }, 1000);
+    // }
   };
 
   // if (!detail.length) return <p>No existe el producto</p>;

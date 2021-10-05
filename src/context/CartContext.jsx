@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 
 const CartContext = React.createContext();
 CartContext.displayName = 'CartContext';
@@ -19,19 +19,21 @@ export const CartProvider = ({ children }) => {
           : item
       );
 
-      return setCart([...newCart]);
+      return setCart(newCart);
     }
 
     setCart([...cart, newProduct]);
   };
 
-  const removeProduct = () => {};
+  const removeProduct = (id) => {
+    console.log('remove id:', id);
+    const newCart = cart.filter((item) => item.id !== id);
+    return setCart(newCart);
+  };
 
   const clearCart = () => {
     setCart([]);
   };
-
-  const isInCart = () => {};
 
   const getQuantity = () => {
     console.log('getQuantity cart:', cart);
@@ -39,7 +41,16 @@ export const CartProvider = ({ children }) => {
     return quantity;
   };
 
-  const value = { addProduct, removeProduct, clearCart, isInCart, getQuantity };
+  const cartWidgetRef = useRef();
+
+  const value = {
+    cart,
+    cartWidgetRef,
+    addProduct,
+    removeProduct,
+    clearCart,
+    getQuantity,
+  };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
