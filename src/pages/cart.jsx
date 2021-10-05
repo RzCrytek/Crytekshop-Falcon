@@ -4,7 +4,6 @@ import { useCartContext } from '../context/CartContext';
 
 import Layout from './_layout';
 import ProductCart from '../components/ProductCart/ProductCart';
-import ItemCount from '../components/ItemCount/ItemCount';
 import { Link } from 'react-router-dom';
 
 const CartPage = () => {
