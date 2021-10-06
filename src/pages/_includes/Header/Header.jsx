@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 import './Header.scss';
+import imageLogo from '../../../images/logo.svg';
 
 import { useCartContext } from '../../../context/CartContext';
 import CartWidget from '../../../components/CartWidget/CartWidget';
@@ -13,7 +14,7 @@ const Header = () => {
     <header id="header">
       <div className="container">
         <Link to="/">
-          <img src="/img/logo.svg" alt="Logo" />
+          <img src={imageLogo} alt="Logo" />
         </Link>
 
         <nav className="nav">
