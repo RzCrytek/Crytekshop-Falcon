@@ -1,0 +1,16 @@
+@import './src/styles/settings';
+
+#product-detail {
+  .options {
+    background-color: $peru;
+  }
+
+  .container {
+    padding: 0;
+  }
+
+  .btn--back {
+    max-width: 150px;
+    border: 0;
+  }
+}
