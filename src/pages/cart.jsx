@@ -1,10 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { useCartContext } from '../context/CartContext';
 
 import Layout from './_layout';
 import ProductCart from '../components/ProductCart/ProductCart';
-import { Link } from 'react-router-dom';
 
 const CartPage = () => {
   const { cart, removeProduct, getQuantityProducts, getTotalPriceProducts } =
@@ -12,8 +12,6 @@ const CartPage = () => {
 
   const quantity = getQuantityProducts();
   const messageQuantity = quantity > 1 ? 'Productos' : 'Producto';
-
-  console.log('cart page:', cart);
 
   return (
     <Layout pageId="cart">
@@ -58,37 +56,45 @@ const CartPage = () => {
           <div className="summary-content">
             <h2>RESUMEN DE TU PEDIDO</h2>
             <div className="summary">
-              <div className="summary-row">
-                <p className="text">Subtotal ({quantity})</p>
-                <p className="price">S/.{getTotalPriceProducts()}</p>
+              <div className="summary-row subtotal">
+                <p className="text">
+                  Subtotal<span> ({quantity})</span>
+                </p>
+                <p className="price">
+                  <strong>S/.{getTotalPriceProducts()}</strong>
+                </p>
               </div>
 
               <div className="summary-row">
                 <p className="text">Envío</p>
-                <p className="price">GRATIS</p>
+                <p className="price">
+                  <strong>GRATIS</strong>
+                </p>
               </div>
 
               <div className="coupon-code">
                 <div className="summary-row">
                   <p className="text">Cupón de descuento</p>
-                  <p className="price">S/.0.00</p>
+                  <p className="price">
+                    <strong>S/.0.00</strong>
+                  </p>
                 </div>
 
                 <div className="apply-discount">
-                  <input className="form-control" type="text" />
+                  <input
+                    className="form-control"
+                    type="text"
+                    placeholder="Ingresa un código"
+                  />
                   <button className="btn btn--primary">APLICAR</button>
                 </div>
               </div>
 
               <hr />
 
-              <div className="summary-row">
-                <p className="text">
-                  <strong>TOTAL</strong>
-                </p>
-                <p className="price">
-                  <strong>S/.{getTotalPriceProducts()}</strong>
-                </p>
+              <div className="summary-row total-pay">
+                <p className="text">TOTAL</p>
+                <p className="price">S/.{getTotalPriceProducts()}</p>
               </div>
             </div>
           </div>

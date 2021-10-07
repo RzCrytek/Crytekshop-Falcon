@@ -49,6 +49,10 @@
     }
 
     .summary {
+      strong {
+        font-weight: 600;
+      }
+
       &-row {
         display: flex;
         justify-content: space-between;
@@ -58,6 +62,12 @@
         &:last-child {
           border-bottom: 0;
         }
+      }
+    }
+
+    .subtotal {
+      .text span {
+        font-size: 14px;
       }
     }
 
@@ -74,6 +84,10 @@
         padding-inline: 8px;
         margin-bottom: 12px;
       }
+    }
+
+    .total-pay {
+      font-weight: 800;
     }
   }
 }

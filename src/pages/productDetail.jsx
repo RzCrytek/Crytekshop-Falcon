@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom';
 import { doc, getDoc } from '@firebase/firestore';
 import db from '../firebase/firebaseConfig';
 
+import Layout from './_layout';
+
 import Loader from '../components/Loader/Loader';
 import { DetailView } from '../components/pages';
-
-import Layout from './_layout';
 
 const ProductDetailPage = () => {
   const { id } = useParams();

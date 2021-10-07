@@ -2,46 +2,52 @@ import React from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 
 import styles from './ProductCart.module.scss';
+import imageNoPhoto from '../../images/no-photo.png';
 
 const ProductCart = ({ product, removeProduct }) => {
+  const {
+    images,
+    brand,
+    title,
+    stock,
+    sku,
+    quantity,
+    original_price,
+    price,
+    id,
+  } = product;
+
+  const imageSrc = images?.length ? images[0].src : imageNoPhoto;
+
   return (
     <div className={styles.product_cart}>
       <picture>
-        <img
-          src="http://i.annihil.us/u/prod/marvel/i/mg/f/20/4bc63a47b8dcb.jpg"
-          alt="Marvel"
-        />
+        <img src={imageSrc} alt={product.images[0].alt} />
       </picture>
 
       <div className={styles.information}>
         <div className={styles.info_description}>
           <div className={styles.info_name}>
             <h5>
-              <strong>{product.format}</strong>
+              <strong>{brand}</strong>
             </h5>
-            <h4>{product.title}</h4>
-            <p className={styles.sku}>SKU: {product.upc}</p>
-            <p className={styles.sku}>Cantidad: {product.quantity}</p>
+            <h4>{title}</h4>
+            <p>SKU: {sku}</p>
+            {/* <p>Cantidad: {quantity}</p> */}
           </div>
 
           <div className={styles.info_prices}>
-            {!(product.prices[0].price === 0) && (
-              <del>S/. {(product.prices[0].price + 15).toFixed(2)}</del>
-            )}
-            <h5>S/. {(product.prices[0].price + 10).toFixed(2)}</h5>
+            {original_price && <del>S/. {original_price.toFixed(2)}</del>}
+            <h5>S/. {price.toFixed(2)}</h5>
           </div>
         </div>
 
         <div className={styles.actions}>
-          <ItemCount
-            stock={10}
-            quantity={product.quantity}
-            productId={product.id}
-          />
+          <ItemCount stock={stock} quantity={quantity} productId={id} />
           <button
             className={styles.delete_product}
             type="button"
-            onClick={() => removeProduct(product.id)}
+            onClick={() => removeProduct(id)}
           >
             Eliminar
           </button>
