@@ -9,7 +9,7 @@ import ItemCount from '../ItemCount/ItemCount';
 const initialAmount = 1;
 
 const ProductDetail = ({ detail }) => {
-  console.log('detail:', detail);
+  console.log('detail:', detail.price);
   const initialStock = 10;
   const inStock = !!(initialStock && initialStock > 0);
 
@@ -54,8 +54,12 @@ const ProductDetail = ({ detail }) => {
             <p style={{ fontSize: '18px' }}>
               <strong>Precio:</strong>
             </p>
-            <span className={styles.current}>S/. {detail.price}</span>
-            {detail.original_price && <del>S/. {detail.original_price}</del>}
+            <span className={styles.current}>
+              S/. {detail.price?.toFixed(2)}
+            </span>
+            {detail.original_price && (
+              <del>S/. {detail.original_price?.toFixed(2)}</del>
+            )}
           </div>
 
           <div className={styles.wrap}>
