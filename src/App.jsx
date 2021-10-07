@@ -28,10 +28,10 @@ function App() {
           <Redirect to="productos" />
         </Route> */}
           <Route exact path="/" component={HomePage} />
-          <Route exact path="/personajes" component={CharactersPage} />
+          {/* <Route exact path="/personajes" component={CharactersPage} />
           <Route exact path="/series" component={SeriesPage} />
           <Route exact path="/series/:year" component={SeriesPage} />
-          <Route exact path="/events" component={EventsPage} />
+          <Route exact path="/events" component={EventsPage} /> */}
           <Route exact path="/productos" component={ProductsPage} />
           <Route path="/producto/:id" component={ProductDetailPage} />
           <Route exact path="/cart" component={CartPage} />
