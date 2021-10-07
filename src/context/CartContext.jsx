@@ -42,7 +42,7 @@ export const CartProvider = ({ children }) => {
 
   const getTotalPriceProducts = () => {
     const totalPrice = cart
-      .reduce((acc, el) => acc + (el.prices[0].price + 10) * el.quantity, 0)
+      .reduce((acc, el) => acc + el.price * el.quantity, 0)
       .toFixed(2);
 
     return totalPrice;

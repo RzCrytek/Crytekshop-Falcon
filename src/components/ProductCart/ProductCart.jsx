@@ -20,15 +20,15 @@ const ProductCart = ({ product, removeProduct }) => {
               <strong>{product.format}</strong>
             </h5>
             <h4>{product.title}</h4>
-            <p className={styles.sku}>SKU: {product.upc}</p>
+            <p className={styles.sku}>SKU: {product.sku}</p>
             <p className={styles.sku}>Cantidad: {product.quantity}</p>
           </div>
 
           <div className={styles.info_prices}>
-            {!(product.prices[0].price === 0) && (
-              <del>S/. {(product.prices[0].price + 15).toFixed(2)}</del>
+            {product.original_price && (
+              <del>S/. {product.price.toFixed(2)}</del>
             )}
-            <h5>S/. {(product.prices[0].price + 10).toFixed(2)}</h5>
+            <h5>S/. {product.price.toFixed(2)}</h5>
           </div>
         </div>
 
