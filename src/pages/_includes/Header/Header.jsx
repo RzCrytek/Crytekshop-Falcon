@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
+import { useCartContext } from '../../../context/CartContext';
+
 import './Header.scss';
 import imageLogo from '../../../images/logo.svg';
 
-import { useCartContext } from '../../../context/CartContext';
 import CartWidget from '../../../components/CartWidget/CartWidget';
 
 const Header = () => {

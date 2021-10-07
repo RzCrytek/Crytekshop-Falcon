@@ -68,8 +68,6 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  // const cartWidgetRef = useRef();
-
   const value = {
     cart,
     cartWidgetAnimate,

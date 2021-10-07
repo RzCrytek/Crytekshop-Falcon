@@ -62,7 +62,7 @@ const ProductsPage = () => {
     <Layout pageId="product">
       <div className="container">
         <div className="options">
-          <h2>LISTA DE COMICS</h2>
+          <h2>LISTA DE PRODUCTOS</h2>
         </div>
 
         {/* <nav>
@@ -87,7 +87,7 @@ const ProductsPage = () => {
             return (
               <ProductCard
                 key={product.id}
-                comic={product}
+                product={product}
                 typeProduct={true}
               />
             );

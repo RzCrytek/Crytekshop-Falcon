@@ -24,8 +24,6 @@
   }
 
   picture {
-    // background: #eceff1;
-    background: #e9ecef;
     display: block;
     // width: 300px;
     width: 100%;
@@ -34,6 +32,8 @@
     transition: $t-1;
 
     img {
+      // background-color: #eceff1;
+      background-color: #e9ecef;
       width: 100%;
       height: 100%;
       object-fit: cover;

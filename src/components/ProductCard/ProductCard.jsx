@@ -2,43 +2,37 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import styles from './ProductCard.module.scss';
+import imageNoPhoto from '../../images/no-photo.png';
 
-const ProductCard = ({ comic, typeProduct }) => {
-  // console.log('comic', comic);
-  console.log('comic', comic);
-  // console.log('comic', comic.prices.length);
-
-  // const pathImage = `${comic.thumbnail.path}.${comic.thumbnail.extension}`;
-  // const image = comic.images?.length ? pathImage : '/img/no-photo.png';
+const ProductCard = ({ product, typeProduct }) => {
+  const { id, images, title, price, original_price } = product;
+  const imageSrc = images?.length ? images[0].src : imageNoPhoto;
 
   if (!typeProduct) {
     return (
       <div className={styles.card}>
         <picture>
-          {/* <img src={pathImage || image} alt={comic.name} /> */}
-          <img src={comic.images[0]} alt={comic.images[0].alt} />
+          <img src={images[0].src} alt={images[0].alt} />
         </picture>
 
         <div className={styles.summary}>
-          <h2 className={styles.name}>{comic.title || comic.name}</h2>
+          <h2 className={styles.name}>{title}</h2>
         </div>
       </div>
     );
   }
 
   return (
-    <Link className={styles.card} to={`/producto/${comic.id}`}>
+    <Link className={styles.card} to={`/producto/${id}`}>
       <picture>
-        <img src={comic.images[0].src} alt={comic.images[0].alt} />
+        <img src={imageSrc} alt={images[0].alt} />
       </picture>
 
       <div className={styles.summary}>
-        <h2 className={styles.name}>{comic.title}</h2>
+        <h2 className={styles.name}>{title}</h2>
         <p className={styles.price}>
-          <span className="current">S/. {comic.price.toFixed(2)}</span>
-          {comic.original_price && (
-            <del>S/. {comic.original_price.toFixed(2)}</del>
-          )}
+          <span className="current">S/. {price.toFixed(2)}</span>
+          {original_price && <del>S/. {original_price.toFixed(2)}</del>}
         </p>
       </div>
 

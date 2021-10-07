@@ -18,7 +18,7 @@
 
   picture {
     img {
-      max-width: 400px;
+      // max-width: 400px;
       width: 100%;
       margin-inline: auto;
     }
@@ -27,6 +27,8 @@
 
 .dataContent {
   @extend .col;
+  display: flex;
+  flex-direction: column;
 
   h1 {
     margin-block: 16px;
@@ -40,6 +42,7 @@
 
   .price {
     @extend %font-robotoC;
+    margin-top: auto;
 
     .current {
       font-size: 32px;

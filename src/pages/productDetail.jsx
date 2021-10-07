@@ -1,24 +1,45 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 
+import { doc, getDoc } from '@firebase/firestore';
+import db from '../firebase/firebaseConfig';
+
 import Layout from './_layout';
-import { ProductDetailContainer } from '../components';
+
+import Loader from '../components/Loader/Loader';
+import { DetailView } from '../components/pages';
 
 const ProductDetailPage = () => {
   const { id } = useParams();
 
-  const buttonCSS = {
-    maxWidth: '150px',
-    border: 0,
-  };
+  const [loader, setLoader] = useState(true);
+  const [product, setProduct] = useState([]);
+
+  useEffect(() => {
+    const getProduct = async () => {
+      const docSnap = await getDoc(doc(db, 'products', `${id}`));
+      console.log('docSnap firebase:', docSnap);
+
+      if (docSnap.exists()) {
+        console.log('Document data:', docSnap.data());
+        setProduct({ id: docSnap.id, ...docSnap.data() });
+        setLoader(false);
+      } else {
+        // doc.data() will be undefined in this case
+        console.log('No existe el documento y/o producto');
+      }
+    };
+
+    getProduct();
+  }, [id]);
 
   return (
     <Layout pageId="product-detail">
-      <div className="options" style={{ backgroundColor: 'peru' }}>
-        <div className="container" style={{ padding: 0 }}>
-          <Link className="btn btn--back" to="/productos" style={buttonCSS}>
+      <div className="options">
+        <div className="container">
+          <Link className="btn btn--back" to="/productos">
             <i
               className="ico"
               style={{ backgroundImage: "url('/img/icons/arrow--left.svg')" }}
@@ -29,7 +50,7 @@ const ProductDetailPage = () => {
       </div>
 
       <div className="container">
-        <ProductDetailContainer id={id} />
+        {loader ? <Loader /> : <DetailView detail={product} />}
       </div>
     </Layout>
   );
