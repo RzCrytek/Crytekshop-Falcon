@@ -1,0 +1,138 @@
+{
+  "products": [
+    {
+      "available": true,
+      "brand": "Funko POP!",
+      "categoryId": 0,
+      "description": "Aang was told he was the next Avatar at only 12 years old. While trying to flee, Aang was encased in ice and survived to be broken out after a century to restore balance to the world. Collect Pop! Aang and Momo to restore balance to your collection of Avatar: The Last Airbender. Vinyl figure is approximately 5.75-inches tall.",
+      "discount_percentage": 0,
+      "exclusive": true,
+      "id": 0,
+      "images": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/1052/2158/products/1436_4203_36463_Avatar_AangWithMomo_POP_WEB.png?v=1611868819",
+          "alt": "Front image of Aang with Momo - Avatar: The Last Airbender pop"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/1052/2158/products/1436_4203_36463_Avatar_AangWithMomo_POP_WEB-1.png?v=1611868819",
+          "alt": "Box image of Aang with Momo - Avatar: The Last Airbender pop"
+        }
+      ],
+      "original_price": 120,
+      "price": 100,
+      "published": true,
+      "rating": 0,
+      "sku": "4628567720002",
+      "slug": "anime-avatar-last-airbender-aang-momo-pop",
+      "stock": 5,
+      "title": "Pop! Aang with Momo - Avatar: The Last Airbender | Funko"
+    },
+    {
+      "available": true,
+      "brand": "Funko POP!",
+      "categoryId": 0,
+      "description": "Gon's father left him in the care of a childhood friend, and now it is Gon's goal to become a hunter and seek out his father. Assemble your <i>Hunter X Hunter</i> collection with Pop! Gon Freecss. Collectible stands approximately 3.75-inches tall.",
+      "discount_percentage": 0,
+      "exclusive": false,
+      "id": 1,
+      "images": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/1052/2158/products/41062_HunterxHunter_GonFreecs_POP_GLAM-WEB.png?v=1592287761",
+          "alt": "Front image of Gon Freecss Jajank -  Hunter x Hunter pop"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/1052/2158/products/41062_HunterxHunter_GonFreecs_POP_GLAM-1-WEB.png?v=1622830788",
+          "alt": "Box image of Gon Freecss Jajank -  Hunter x Hunter pop"
+        }
+      ],
+      "original_price": 80,
+      "price": 50,
+      "published": true,
+      "rating": 0,
+      "sku": "4602619625538",
+      "slug": "gon-freecss-hunter-x-hunter",
+      "stock": 10,
+      "title": "Gon Freecss -  Hunter x Hunter"
+    },
+    {
+      "available": true,
+      "brand": "Funko POP!",
+      "categoryId": 0,
+      "description": "Deku and the heroes-in-training at U.A. High School are determined to rescue Eri. Offer safe haven to Pop! Deku with Eri by adding them to your <i>My Hero Academia</i> collection and complete the set. Vinyl figure is approximately 4.75-inches tall.",
+      "discount_percentage": 0,
+      "exclusive": true,
+      "id": 2,
+      "images": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/1052/2158/products/51933_MHA_DekuInfiniteGW_POP_GLAM-1-WEB.png?v=1631057966",
+          "alt": "Front image of Infinite Deku with Eri - My Hero Academia pop"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/1052/2158/products/51933_MHA_DekuInfiniteGW_POP_GLAM-1-1-WEB.png?v=1631057966",
+          "alt": "Box image of Infinite Deku with Eri - My Hero Academia pop"
+        }
+      ],
+      "original_price": 180,
+      "price": 150,
+      "published": true,
+      "rating": 0,
+      "sku": "6953379397821",
+      "slug": "anime-my-hero-academia-infinite-deku-eri-pop",
+      "stock": 5,
+      "title": "Infinite Deku with Eri - My Hero Academia"
+    },
+    {
+      "available": true,
+      "brand": "Funko POP!",
+      "categoryId": 0,
+      "description": "Nagato sought to bring peace to a violent world, but ended up slipping down a dark path of trying to establish peace by force and taking on the name Pain. Add Pop! Pain to your <i>Naruto: Shippuden</i> collection so that Naruto can show him a better way to bring peace to the land. Vinyl figure is approximately 5-inches tall.",
+      "discount_percentage": 0,
+      "exclusive": true,
+      "id": 3,
+      "images": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/1052/2158/products/49807_Naruto_Pain_POP_GLAM-WEB.png?v=1611105228",
+          "alt": "Front image of Pain - Naruto: Shippuden pop"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/1052/2158/products/49807_Naruto_Pain_POP_GLAM-1-WEB.png?v=1614618940",
+          "alt": "Box image of Pain - Naruto: Shippuden pop"
+        }
+      ],
+      "original_price": 120,
+      "price": 100,
+      "published": true,
+      "rating": 0,
+      "sku": "6176883245245",
+      "slug": "anime-naruto-pain-pop",
+      "stock": 10,
+      "title": "Pain - Naruto: Shippuden"
+    },
+    {
+      "available": true,
+      "brand": "Funko POP!",
+      "categoryId": 0,
+      "description": "When the Olympian gods try to overtake Earth, Athena reincarnates and her five warriors emerge to harness mystic energy to fight alongside their goddess. Whether it was the manga or the 1986 anime TV adaptation that caught your attention, the <i>Saint Seiya Knights of the Zodiac</i> are coming together to defend your collection. Assemble the Saints with Pop! Dragon Shiryu. Collectible stands approximately 4.5-inches tall.",
+      "discount_percentage": 0,
+      "id": 4,
+      "images": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/1052/2158/products/47689_SaintSeiya_Shiryu_GLAM-WEB.png?v=1606243513",
+          "alt": "Front image of Dragon Shiryu - Saint Seiya pop"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/1052/2158/products/47689_SaintSeiya_Shiryu_GLAM-1-WEB.png?v=1606243513",
+          "alt": "Box image of Dragon Shiryu - Saint Seiya pop"
+        }
+      ],
+      "original_price": 80,
+      "price": 50,
+      "published": true,
+      "rating": 0,
+      "sku": "6095526494397",
+      "slug": "anime-saint-seiya-dragon-shiryu-pop",
+      "stock": 5,
+      "title": "Dragon Shiryu - Saint Seiya"
+    }
+  ]
+}

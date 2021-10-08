@@ -15,7 +15,7 @@ const useGetDocs = (collectionName) => {
   useEffect(() => {
     const getDocsCollection = async () => {
       const querySnapshot = await getDocs(collection(db, collectionName));
-      console.log('querySnapshot firebase:', querySnapshot);
+      // console.log('querySnapshot firebase:', querySnapshot);
 
       const arrQuerySnapshot = querySnapshot.docs.map((document) => ({
         id: document.id,

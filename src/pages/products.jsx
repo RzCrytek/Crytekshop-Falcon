@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router';
 import { NavLink } from 'react-router-dom';
 
 import useGetDocs from '../hooks/useGetDocs';
@@ -8,10 +9,29 @@ import Loader from '../components/Loader/Loader';
 import ProductCard from '../components/ProductCard/ProductCard';
 
 const ProductsPage = () => {
+  const { category: categoryParam } = useParams();
+
   const { data: products, loader } = useGetDocs('products');
   const { data: categories } = useGetDocs('categories');
 
-  console.log('data-loader', products, categories);
+  console.log('category param ID:', categoryParam);
+  // console.log('data-loader', products, categories);
+
+  useEffect(() => {
+    const category = categories.find(
+      (category) => category.slug === categoryParam
+    );
+
+    console.log('category', category);
+    const categoryId = category?.id;
+    console.log('categoryID', categoryId);
+
+    const productsCategory = products.filter(
+      (product) => product.catID === categoryId
+    );
+
+    console.log('productsCategory:', productsCategory);
+  }, [categoryParam, categories, products]);
 
   return (
     <Layout pageId="product">

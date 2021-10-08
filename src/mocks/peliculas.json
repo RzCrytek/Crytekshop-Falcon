@@ -1,0 +1,139 @@
+{
+  "products": [
+    {
+      "available": true,
+      "brand": "Funko POP!",
+      "categoryId": 2,
+      "description": "Pop! Aragorn has drawn Andúril and is ready to protect the Fellowship of the Ring as they journey to Mount Doom to destroy the One Ring. Recruit Pop! Aragorn to complete your collection of <i>The Lord of the Rings</i>. Vinyl figure is approximately 4-inches tall.",
+      "discount_percentage": 0,
+      "exclusive": true,
+      "id": 10,
+      "images": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/1052/2158/products/13565_LOTR_Aragorn_POP_GLAM-WEB.png?v=1625240765",
+          "alt": "Front image of Aragorn - Lord of the Rings pop"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/1052/2158/products/13565_LOTR_Aragorn_POP_GLAM-1-WEB.png?v=1625240765",
+          "alt": "Box image of Aragorn - Lord of the Rings pop"
+        }
+      ],
+      "original_price": null,
+      "price": 200,
+      "published": true,
+      "rating": 0,
+      "sku": "6814050484413",
+      "slug": "action-adventure-lord-of-the-rings-aragorn-pop",
+      "stock": 10,
+      "title": "Aragorn - Lord of the Rings"
+    },
+    {
+      "available": true,
+      "brand": "Funko POP!",
+      "categoryId": 2,
+      "description": "<p>Batman will have to rise to the occasion to bring this 10-inch tall Pop! Joker to justice in your DC collection.</p>",
+      "discount_percentage": 0,
+      "exclusive": true,
+      "id": 11,
+      "images": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/1052/2158/products/47827_DC_Dark_Knight_Joker_10in_POP_GLAM-WEB.png?v=1592286831",
+          "alt": "Front image of 10'' The Joker - The Dark Knight Trilogy pop jumbo"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/1052/2158/products/47827_DC_Dark_Knight_Joker_10in_POP_GLAM-1-WEB.png?v=1592286831",
+          "alt": "Box image of 10'' The Joker - The Dark Knight Trilogy pop jumbo"
+        }
+      ],
+      "original_price": null,
+      "price": 180,
+      "published": true,
+      "rating": 0,
+      "sku": "4602603995202",
+      "slug": "the-joker-the-dark-knight-trilogy",
+      "stock": 5,
+      "title": "10'' The Joker - The Dark Knight Trilogy"
+    },
+    {
+      "available": true,
+      "brand": "Funko POP!",
+      "categoryId": 2,
+      "description": "<p>You won't need time travel to relive the gripping Endgame battle. Collect this Marvel Endgame Pop! Thanos. Collectible stands approximately 3.75-inches tall.</p>",
+      "discount_percentage": 0,
+      "exclusive": false,
+      "id": 12,
+      "images": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/1052/2158/products/1436_4202_8d6a7dcebce8195_36672_Avengers_Thanos_POP_WEB.png?v=1592287675",
+          "alt": "Front image of Thanos - Avengers Endgame"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/1052/2158/products/1436_4203_8d6a7dcebd5a89c_36672_Avengers_Thanos_POP_WEB-1.png?v=1592287675",
+          "alt": "Box image of Thanos - Avengers Endgame"
+        }
+      ],
+      "original_price": 120,
+      "price": 100,
+      "published": true,
+      "rating": 0,
+      "sku": "4602617987138",
+      "slug": "thanos-avengers-endgame",
+      "stock": 10,
+      "title": "Thanos - Avengers Endgame"
+    },
+    {
+      "available": true,
+      "brand": "Funko POP!",
+      "categoryId": 2,
+      "description": "Celebrate the most stellar fandom of them all with the <i>Star Wars</i>™ <i>The Last Jedi</i>™ Pop! Chewbacca with Porg.  Vinyl bobblehead is approximately 5-inches tall.",
+      "discount_percentage": 0,
+      "exclusive": false,
+      "id": 13,
+      "images": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/1052/2158/products/14748_SWEP8_Chewbacca_POP_GLAM-WEB_1.png?v=1629995441",
+          "alt": "Front image of Chewbacca with Porg - Star Wars pop"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/1052/2158/products/14748_SWEP8_Chewbacca_POP_GLAM-1-WEB.png?v=1629992619",
+          "alt": "Box image of Chewbacca with Porg - Star Wars pop"
+        }
+      ],
+      "original_price": 120,
+      "price": 100,
+      "published": true,
+      "rating": 0,
+      "sku": "6929027498173",
+      "slug": "star-wars-the-last-jedi-chewbacca-porg-pop",
+      "stock": 5,
+      "title": "Chewbacca with Porg - Star Wars"
+    },
+    {
+      "available": true,
+      "brand": "Funko POP!",
+      "categoryId": 2,
+      "description": "With the golden snitch in one hand and his broomstick in the other, Harry Potter stands triumphant from yet another amazing Quidditch™ game! Collect Pop! Harry Potter in his Quidditch robes for your <i>Harry Potter</i> collection to commemorate his big wins. Collectible stands approximately 3.75-inches tall.",
+      "discount_percentage": 0,
+      "exclusive": false,
+      "id": 14,
+      "images": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/1052/2158/products/5902_HarryPotter_Quidditch_Harry_POP_GLAM-WEB.png?v=1592286054",
+          "alt": "Front image of Quidditch Harry - Harry Potter pop"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/1052/2158/products/5902_HP_Quidditch_Harry_POP_GLAM-WH-1-WEB.png?v=1629826937",
+          "alt": "Box image of Quidditch Harry - Harry Potter pop"
+        }
+      ],
+      "original_price": 80,
+      "price": 50,
+      "published": true,
+      "rating": 0,
+      "sku": "4602582138946",
+      "slug": "quidditch-harry-harry-potter",
+      "stock": 10,
+      "title": "Quidditch Harry - Harry Potter"
+    }
+  ]
+}
