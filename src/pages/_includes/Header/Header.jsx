@@ -19,7 +19,7 @@ const Header = () => {
         </Link>
 
         <nav className="nav">
-          {/* <ul className="menu">
+          <ul className="menu">
             <li>
               <NavLink to="/personajes" activeClassName="active">
                 Personajes
@@ -31,7 +31,10 @@ const Header = () => {
             <li>
               <NavLink to="/events">Eventos</NavLink>
             </li>
-          </ul> */}
+            <li>
+              <NavLink to="/exclusive">exclusivos</NavLink>
+            </li>
+          </ul>
 
           <div className="options">
             {getQuantityProducts() > 0 && (

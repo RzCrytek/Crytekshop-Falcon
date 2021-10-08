@@ -1,62 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+
+import useGetDocs from '../hooks/useGetDocs';
 
 import Layout from './_layout';
-import { ProductListContainer } from '../components';
-import { collection, getDocs } from '@firebase/firestore';
-import db from '../firebase/firebaseConfig';
-import { NavLink } from 'react-router-dom';
+import Loader from '../components/Loader/Loader';
 import ProductCard from '../components/ProductCard/ProductCard';
 
 const ProductsPage = () => {
-  // const [categories, setCategories] = useState([]);
-  const [products, setProducts] = useState([]);
+  const { data: products, loader } = useGetDocs('products');
+  const { data: categories } = useGetDocs('categories');
 
-  useEffect(() => {
-    // const getProducts = async () => {
-    //   const data = await getDocs(collection(db, 'products'));
-    //   console.log('data firebase:', data);
-
-    //   data.forEach((document) => {
-    //     console.log('document:', { id: document.id, ...document.data() });
-
-    //     if (document.data().categoryKey) {
-    //       console.log('document category:', {
-    //         id: document.id,
-    //         ...document.data(),
-    //       });
-    //     }
-    //   });
-    // };
-
-    // getProducts();
-
-    // const getCategories = async () => {
-    //   const querySnapshot = await getDocs(collection(db, 'categories'));
-    //   console.log('querySnapshot firebase:', querySnapshot);
-
-    //   const arrQuerySnapshot = querySnapshot.docs.map((document) => ({
-    //     id: document.id,
-    //     ...document.data(),
-    //   }));
-
-    //   setCategories(arrQuerySnapshot);
-    // };
-
-    const getProducts = async () => {
-      const querySnapshot = await getDocs(collection(db, 'products'));
-      console.log('querySnapshot firebase:', querySnapshot);
-
-      const arrQuerySnapshot = querySnapshot.docs.map((document) => ({
-        id: document.id,
-        ...document.data(),
-      }));
-
-      setProducts(arrQuerySnapshot);
-    };
-
-    // getCategories();
-    getProducts();
-  }, []);
+  console.log('data-loader', products, categories);
 
   return (
     <Layout pageId="product">
@@ -65,24 +20,29 @@ const ProductsPage = () => {
           <h2>LISTA DE PRODUCTOS</h2>
         </div>
 
-        {/* <nav>
+        <nav>
           <ul className="nav-category">
+            <li>
+              <NavLink exact className="btn btn--stroke" to="/productos">
+                All
+              </NavLink>
+            </li>
             {categories.map((category) => (
               <li key={category.id}>
                 <NavLink
-                  exact
                   className="btn btn--stroke"
-                  to={`/${category.slug}`}
+                  to={`/productos/${category.slug}`}
                 >
                   {category.name}
                 </NavLink>
               </li>
             ))}
           </ul>
-        </nav> */}
+        </nav>
 
         {/* <ProductListContainer typeProduct={true} /> */}
         <section className="cards-box">
+          {loader && <Loader />}
           {products?.map((product) => {
             return (
               <ProductCard
