@@ -1,19 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useParams } from 'react-router';
 import { NavLink } from 'react-router-dom';
 
-import {
-  collection,
-  doc,
-  getDoc,
-  getDocs,
-  query,
-  where,
-} from '@firebase/firestore';
-import db from '../firebase/firebaseConfig';
-
 import useGetDocs from '../hooks/useGetDocs';
-import useGetCategoryId from '../hooks/useGetCategoryId';
 import useGetDocsFilter from '../hooks/useGetDocsFilter';
 
 import Layout from './_layout';
@@ -22,11 +11,9 @@ import ProductCard from '../components/ProductCard/ProductCard';
 
 const ProductsPage = () => {
   const { category: categoryParam } = useParams();
-
   console.log('categoryParam:', categoryParam);
 
   const { data: categories } = useGetDocs('categories');
-  // const categoryKey = useGetCategoryId(categoryParam, categories);
   console.log('categories:', categories);
 
   const paramData = categories.find(
@@ -34,21 +21,9 @@ const ProductsPage = () => {
   );
   console.log('paramData:', paramData);
 
-  // const categoryKey = paramData ? paramData.key : '';
-  // const categoryKey = paramData ? paramData.key : '';
-  // console.log('categoryKey:', categoryKey);
+  const filterQuery = paramData ? ['categoryKey', '==', paramData.key] : '';
 
-  let filter;
-  if (paramData) {
-    const filterQuery = ['categoryKey', '==', paramData.key];
-    console.log('filterQuery:', filterQuery);
-    let filter = filterQuery;
-    console.log('filter:', filter);
-  } else {
-    filter = '';
-  }
-
-  const { data: products, loader } = useGetDocsFilter('products', filter);
+  const { data: products, loader } = useGetDocsFilter('products', filterQuery);
 
   return (
     <Layout pageId="product">
@@ -77,11 +52,9 @@ const ProductsPage = () => {
           </ul>
         </nav>
 
-        {/* <ProductListContainer typeProduct={true} /> */}
         <section className="cards-box">
           {loader && <Loader />}
-          {products?.map((product) => {
-            /* console.log('product:', product); */
+          {products.map((product) => {
             return (
               <ProductCard
                 key={product.id}
