@@ -39,9 +39,11 @@ const ProductsPage = () => {
 
   const filterQuery = ['categoryKey', '==', categoryKey];
   console.log('filterQuery:', filterQuery);
-  // const filter = categoryParam ? filterQuery : '';
 
-  const { data: products, loader } = useGetDocsFilter('products', filterQuery);
+  const filter = categoryParam ? filterQuery : '';
+  console.log('filter:', filter);
+
+  const { data: products, loader } = useGetDocsFilter('products', filter);
 
   return (
     <Layout pageId="product">
