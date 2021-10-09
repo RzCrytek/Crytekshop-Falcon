@@ -34,14 +34,19 @@ const ProductsPage = () => {
   );
   console.log('paramData:', paramData);
 
-  const categoryKey = paramData ? paramData.key : '';
-  console.log('categoryKey:', categoryKey);
+  // const categoryKey = paramData ? paramData.key : '';
+  // const categoryKey = paramData ? paramData.key : '';
+  // console.log('categoryKey:', categoryKey);
 
-  const filterQuery = ['categoryKey', '==', categoryKey];
-  console.log('filterQuery:', filterQuery);
-
-  const filter = categoryParam ? filterQuery : '';
-  console.log('filter:', filter);
+  let filter;
+  if (paramData) {
+    const filterQuery = ['categoryKey', '==', paramData.key];
+    console.log('filterQuery:', filterQuery);
+    let filter = filterQuery;
+    console.log('filter:', filter);
+  } else {
+    filter = '';
+  }
 
   const { data: products, loader } = useGetDocsFilter('products', filter);
 
