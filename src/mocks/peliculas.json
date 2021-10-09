@@ -3,7 +3,8 @@
     {
       "available": true,
       "brand": "Funko POP!",
-      "categoryId": 2,
+      "categoryId": "categories/IgcwDaD8szJuH3P8XIF4",
+      "categoryKey": 2,
       "description": "Pop! Aragorn has drawn Andúril and is ready to protect the Fellowship of the Ring as they journey to Mount Doom to destroy the One Ring. Recruit Pop! Aragorn to complete your collection of <i>The Lord of the Rings</i>. Vinyl figure is approximately 4-inches tall.",
       "discount_percentage": 0,
       "exclusive": true,
@@ -30,7 +31,8 @@
     {
       "available": true,
       "brand": "Funko POP!",
-      "categoryId": 2,
+      "categoryId": "categories/IgcwDaD8szJuH3P8XIF4",
+      "categoryKey": 2,
       "description": "<p>Batman will have to rise to the occasion to bring this 10-inch tall Pop! Joker to justice in your DC collection.</p>",
       "discount_percentage": 0,
       "exclusive": true,
@@ -57,7 +59,8 @@
     {
       "available": true,
       "brand": "Funko POP!",
-      "categoryId": 2,
+      "categoryId": "categories/IgcwDaD8szJuH3P8XIF4",
+      "categoryKey": 2,
       "description": "<p>You won't need time travel to relive the gripping Endgame battle. Collect this Marvel Endgame Pop! Thanos. Collectible stands approximately 3.75-inches tall.</p>",
       "discount_percentage": 0,
       "exclusive": false,
@@ -84,7 +87,8 @@
     {
       "available": true,
       "brand": "Funko POP!",
-      "categoryId": 2,
+      "categoryId": "categories/IgcwDaD8szJuH3P8XIF4",
+      "categoryKey": 2,
       "description": "Celebrate the most stellar fandom of them all with the <i>Star Wars</i>™ <i>The Last Jedi</i>™ Pop! Chewbacca with Porg.  Vinyl bobblehead is approximately 5-inches tall.",
       "discount_percentage": 0,
       "exclusive": false,
@@ -111,7 +115,8 @@
     {
       "available": true,
       "brand": "Funko POP!",
-      "categoryId": 2,
+      "categoryId": "categories/IgcwDaD8szJuH3P8XIF4",
+      "categoryKey": 2,
       "description": "With the golden snitch in one hand and his broomstick in the other, Harry Potter stands triumphant from yet another amazing Quidditch™ game! Collect Pop! Harry Potter in his Quidditch robes for your <i>Harry Potter</i> collection to commemorate his big wins. Collectible stands approximately 3.75-inches tall.",
       "discount_percentage": 0,
       "exclusive": false,

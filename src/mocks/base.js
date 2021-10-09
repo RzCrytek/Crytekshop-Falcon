@@ -35,3 +35,8 @@
 // Animatio: 0-4
 // Serie: 5-9
 // Película: 10-14
+
+// REFERENCIA A LAS CATEGORÍAS
+'categories/TjuCXCS9fRHeZf1B176g';
+'categories/UG9ZWEb97aQVUgiTPXmR';
+'categories/IgcwDaD8szJuH3P8XIF4';

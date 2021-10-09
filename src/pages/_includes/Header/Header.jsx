@@ -20,19 +20,24 @@ const Header = () => {
 
         <nav className="nav">
           <ul className="menu">
-            <li>
+            {/* <li>
               <NavLink to="/personajes" activeClassName="active">
                 Personajes
               </NavLink>
             </li>
+
             <li>
               <NavLink to="/series">Series</NavLink>
             </li>
+
             <li>
               <NavLink to="/events">Eventos</NavLink>
-            </li>
+            </li> */}
+
             <li>
-              <NavLink to="/exclusive">exclusivos</NavLink>
+              <NavLink to="/exclusivos" activeClassName="active">
+                exclusivos
+              </NavLink>
             </li>
           </ul>
 

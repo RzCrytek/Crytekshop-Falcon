@@ -3,9 +3,11 @@
     {
       "available": true,
       "brand": "Funko POP!",
-      "categoryId": 0,
+      "categoryId": "categories/TjuCXCS9fRHeZf1B176g",
+      "categoryKey": 0,
       "description": "Aang was told he was the next Avatar at only 12 years old. While trying to flee, Aang was encased in ice and survived to be broken out after a century to restore balance to the world. Collect Pop! Aang and Momo to restore balance to your collection of Avatar: The Last Airbender. Vinyl figure is approximately 5.75-inches tall.",
       "discount_percentage": 0,
+      "exclusive": true,
       "id": 0,
       "images": [
         {
@@ -29,9 +31,11 @@
     {
       "available": true,
       "brand": "Funko POP!",
-      "categoryId": 0,
+      "categoryId": "categories/TjuCXCS9fRHeZf1B176g",
+      "categoryKey": 0,
       "description": "Gon's father left him in the care of a childhood friend, and now it is Gon's goal to become a hunter and seek out his father. Assemble your <i>Hunter X Hunter</i> collection with Pop! Gon Freecss. Collectible stands approximately 3.75-inches tall.",
       "discount_percentage": 0,
+      "exclusive": false,
       "id": 1,
       "images": [
         {
@@ -55,9 +59,11 @@
     {
       "available": true,
       "brand": "Funko POP!",
-      "categoryId": 0,
+      "categoryId": "categories/TjuCXCS9fRHeZf1B176g",
+      "categoryKey": 0,
       "description": "Deku and the heroes-in-training at U.A. High School are determined to rescue Eri. Offer safe haven to Pop! Deku with Eri by adding them to your <i>My Hero Academia</i> collection and complete the set. Vinyl figure is approximately 4.75-inches tall.",
       "discount_percentage": 0,
+      "exclusive": true,
       "id": 2,
       "images": [
         {
@@ -81,9 +87,11 @@
     {
       "available": true,
       "brand": "Funko POP!",
-      "categoryId": 0,
+      "categoryId": "categories/TjuCXCS9fRHeZf1B176g",
+      "categoryKey": 0,
       "description": "Nagato sought to bring peace to a violent world, but ended up slipping down a dark path of trying to establish peace by force and taking on the name Pain. Add Pop! Pain to your <i>Naruto: Shippuden</i> collection so that Naruto can show him a better way to bring peace to the land. Vinyl figure is approximately 5-inches tall.",
       "discount_percentage": 0,
+      "exclusive": true,
       "id": 3,
       "images": [
         {
@@ -107,7 +115,8 @@
     {
       "available": true,
       "brand": "Funko POP!",
-      "categoryId": 0,
+      "categoryId": "categories/TjuCXCS9fRHeZf1B176g",
+      "categoryKey": 0,
       "description": "When the Olympian gods try to overtake Earth, Athena reincarnates and her five warriors emerge to harness mystic energy to fight alongside their goddess. Whether it was the manga or the 1986 anime TV adaptation that caught your attention, the <i>Saint Seiya Knights of the Zodiac</i> are coming together to defend your collection. Assemble the Saints with Pop! Dragon Shiryu. Collectible stands approximately 4.5-inches tall.",
       "discount_percentage": 0,
       "id": 4,
@@ -133,9 +142,11 @@
     {
       "available": true,
       "brand": "Funko POP!",
-      "categoryId": 1,
+      "categoryId": "categories/UG9ZWEb97aQVUgiTPXmR",
+      "categoryKey": 1,
       "description": "An unexpected figure sits upon the Iron Throne. Commemorate the series' iconic poster for your <i>Game of Thrones</i> collection with this Pop! Deluxe of the Ned Stark on the Iron Throne. Vinyl figure is approximately 6.5-inches tall.",
       "discount_percentage": 0,
+      "exclusive": true,
       "id": 5,
       "images": [
         {
@@ -159,9 +170,11 @@
     {
       "available": true,
       "brand": "Funko POP!",
-      "categoryId": 1,
+      "categoryId": "categories/UG9ZWEb97aQVUgiTPXmR",
+      "categoryKey": 1,
       "description": "<i>Back to the Future</i> celebrates it's 35th anniversary, Doc Brown and Marty McFly come together for the festivities as a collection of Pop! Vinyls. Bring back one of the best parts of the past with Pop! Marty McFly in his futuristic outfit. Collectible is approximately 4-inches tall.",
       "discount_percentage": 0,
+      "exclusive": false,
       "id": 6,
       "images": [
         {
@@ -185,9 +198,11 @@
     {
       "available": true,
       "brand": "Funko POP!",
-      "categoryId": 1,
+      "categoryId": "categories/UG9ZWEb97aQVUgiTPXmR",
+      "categoryKey": 1,
       "description": "<p>When superheroes are bought and owned by Vought International corporation, who will keep the heroes in check? The Boys are vigilantes with superpowers fighting to expose the corruption and falsehoods of the Vought Int. Seven \"heroes\". Bring home Pop! Starlight to be a hero, or perhaps a villain, in your collection of <i>The Boys</i>. There's a 1 in 6 chance you'll find the glow in the dark chase variant. Vinyl figure is approximately 4.15-inches tall. <i>Please note: Chase variants are shipped at random. Receiving a chase with purchase is not guaranteed.</i></p>",
       "discount_percentage": 0,
+      "exclusive": false,
       "id": 7,
       "images": [
         {
@@ -211,9 +226,11 @@
     {
       "available": true,
       "brand": "Funko POP!",
-      "categoryId": 1,
+      "categoryId": "categories/UG9ZWEb97aQVUgiTPXmR",
+      "categoryKey": 1,
       "description": "<p>Add a dash of pop culture to your holiday décor with a Funko Pop! Ornament Mandalorian and The Child. Collect and display the bounty and the hunter for your own seasonal setup or gift this collectible ornament to someone who loves <i>Star Wars</i>™: <i>The Mandalorian</i>™! Funko Pop! Ornaments make great Secret Santa gifts too, since there’s a variety of pop culture themed character ornaments to choose from which appeal to a wide variety of pop culture interests.</p>\n<ul>\n<li><i>Warning: fragile! Keep out of the reach of young children.</i></li>\n<li>Crafted from resin</li>\n<li>Approximate dimensions: 1.9”W x 3.03”H x 1.65”D</li>\n<li>Wipe clean</li>\n<li>Not recommended for outdoor us</li>\n</ul>",
       "discount_percentage": 0,
+      "exclusive": true,
       "id": 8,
       "images": [
         {
@@ -237,9 +254,11 @@
     {
       "available": true,
       "brand": "Funko POP!",
-      "categoryId": 1,
+      "categoryId": "categories/UG9ZWEb97aQVUgiTPXmR",
+      "categoryKey": 1,
       "description": "Keep it in the family with the Pop! Vanya vinyl figure from <i>Umbrella Academ</i><em>y! </em>Vinyl figure is approximately 3.75-inches tall.",
       "discount_percentage": 0,
+      "exclusive": false,
       "id": 9,
       "images": [
         {
@@ -263,9 +282,11 @@
     {
       "available": true,
       "brand": "Funko POP!",
-      "categoryId": 2,
+      "categoryId": "categories/IgcwDaD8szJuH3P8XIF4",
+      "categoryKey": 2,
       "description": "Pop! Aragorn has drawn Andúril and is ready to protect the Fellowship of the Ring as they journey to Mount Doom to destroy the One Ring. Recruit Pop! Aragorn to complete your collection of <i>The Lord of the Rings</i>. Vinyl figure is approximately 4-inches tall.",
       "discount_percentage": 0,
+      "exclusive": true,
       "id": 10,
       "images": [
         {
@@ -289,9 +310,11 @@
     {
       "available": true,
       "brand": "Funko POP!",
-      "categoryId": 2,
+      "categoryId": "categories/IgcwDaD8szJuH3P8XIF4",
+      "categoryKey": 2,
       "description": "<p>Batman will have to rise to the occasion to bring this 10-inch tall Pop! Joker to justice in your DC collection.</p>",
       "discount_percentage": 0,
+      "exclusive": true,
       "id": 11,
       "images": [
         {
@@ -315,9 +338,11 @@
     {
       "available": true,
       "brand": "Funko POP!",
-      "categoryId": 2,
+      "categoryId": "categories/IgcwDaD8szJuH3P8XIF4",
+      "categoryKey": 2,
       "description": "<p>You won't need time travel to relive the gripping Endgame battle. Collect this Marvel Endgame Pop! Thanos. Collectible stands approximately 3.75-inches tall.</p>",
       "discount_percentage": 0,
+      "exclusive": false,
       "id": 12,
       "images": [
         {
@@ -341,9 +366,11 @@
     {
       "available": true,
       "brand": "Funko POP!",
-      "categoryId": 2,
+      "categoryId": "categories/IgcwDaD8szJuH3P8XIF4",
+      "categoryKey": 2,
       "description": "Celebrate the most stellar fandom of them all with the <i>Star Wars</i>™ <i>The Last Jedi</i>™ Pop! Chewbacca with Porg.  Vinyl bobblehead is approximately 5-inches tall.",
       "discount_percentage": 0,
+      "exclusive": false,
       "id": 13,
       "images": [
         {
@@ -367,9 +394,11 @@
     {
       "available": true,
       "brand": "Funko POP!",
-      "categoryId": 2,
+      "categoryId": "categories/IgcwDaD8szJuH3P8XIF4",
+      "categoryKey": 2,
       "description": "With the golden snitch in one hand and his broomstick in the other, Harry Potter stands triumphant from yet another amazing Quidditch™ game! Collect Pop! Harry Potter in his Quidditch robes for your <i>Harry Potter</i> collection to commemorate his big wins. Collectible stands approximately 3.75-inches tall.",
       "discount_percentage": 0,
+      "exclusive": false,
       "id": 14,
       "images": [
         {

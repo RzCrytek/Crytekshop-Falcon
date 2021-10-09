@@ -2,6 +2,16 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router';
 import { NavLink } from 'react-router-dom';
 
+import {
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  query,
+  where,
+} from '@firebase/firestore';
+import db from '../firebase/firebaseConfig';
+
 import useGetDocs from '../hooks/useGetDocs';
 
 import Layout from './_layout';
@@ -17,21 +27,45 @@ const ProductsPage = () => {
   console.log('category param ID:', categoryParam);
   // console.log('data-loader', products, categories);
 
-  useEffect(() => {
-    const category = categories.find(
-      (category) => category.slug === categoryParam
+  const getReferencia = async () => {
+    const docRef = doc(db, 'categories', 'IgcwDaD8szJuH3P8XIF4');
+
+    console.log('docRef:', docRef);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      console.log('Document data:', docSnap);
+    } else {
+      // doc.data() will be undefined in this case
+      console.log('No such document!');
+    }
+
+    const q = query(
+      collection(db, 'products'),
+      where('categoryKey', '==', docRef)
     );
+    const querySnapshot = await getDocs(q);
 
-    console.log('category', category);
-    const categoryId = category?.id;
-    console.log('categoryID', categoryId);
+    // console.log('querySnapshot:', querySnapshot);
+  };
 
-    const productsCategory = products.filter(
-      (product) => product.catID === categoryId
-    );
+  getReferencia();
 
-    console.log('productsCategory:', productsCategory);
-  }, [categoryParam, categories, products]);
+  // useEffect(() => {
+  //   const category = categories.find(
+  //     (category) => category.slug === categoryParam
+  //   );
+
+  //   console.log('category', category);
+  //   const categoryId = category?.id;
+  //   console.log('categoryID', categoryId);
+
+  //   const productsCategory = products.filter(
+  //     (product) => product.catID === categoryId
+  //   );
+
+  //   console.log('productsCategory:', productsCategory);
+  // }, [categoryParam, categories, products]);
 
   return (
     <Layout pageId="product">
@@ -64,6 +98,7 @@ const ProductsPage = () => {
         <section className="cards-box">
           {loader && <Loader />}
           {products?.map((product) => {
+            /* console.log('product:', product); */
             return (
               <ProductCard
                 key={product.id}
