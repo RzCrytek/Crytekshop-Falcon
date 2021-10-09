@@ -23,21 +23,25 @@ import ProductCard from '../components/ProductCard/ProductCard';
 const ProductsPage = () => {
   const { category: categoryParam } = useParams();
 
-  const { data: categories } = useGetDocs('categories');
+  console.log('categoryParam:', categoryParam);
 
+  const { data: categories } = useGetDocs('categories');
+  // const categoryKey = useGetCategoryId(categoryParam, categories);
   console.log('categories:', categories);
 
   const paramData = categories.find(
     (document) => document.slug === categoryParam
   );
-  console.log('categoryData:', paramData);
+  console.log('paramData:', paramData);
 
-  const categoryKey = paramData?.key;
+  const categoryKey = paramData ? paramData.key : '';
+  console.log('categoryKey:', categoryKey);
 
   const filterQuery = ['categoryKey', '==', categoryKey];
-  const filter = categoryParam ? filterQuery : '';
+  console.log('filterQuery:', filterQuery);
+  // const filter = categoryParam ? filterQuery : '';
 
-  const { data: products, loader } = useGetDocsFilter('products', filter);
+  const { data: products, loader } = useGetDocsFilter('products', filterQuery);
 
   return (
     <Layout pageId="product">
