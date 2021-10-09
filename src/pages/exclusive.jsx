@@ -18,7 +18,7 @@ const ExclusivePage = () => {
 
         <section className="cards-box">
           {loader && <Loader />}
-          {products?.map((product) => {
+          {products.map((product) => {
             /* console.log('product:', product); */
             return (
               <ProductCard
