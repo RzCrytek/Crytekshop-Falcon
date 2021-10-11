@@ -9,26 +9,30 @@ const initial = {
   loader: true,
 };
 
-const useGetDocsFilter = (collectionName, filterQuery = []) => {
+const useGetDocsFilter = (collectionName, filterQuery) => {
   const [docsCollection, setDocsCollection] = useState(initial);
 
-  // const conditionalFirestore = ['>', '>=', '<', '<='];
-  const isFilterQuery = filterQuery.length ? true : false;
+  console.log('filterQuery:', filterQuery);
+
+  // const isFilterQuery = filterQuery.length ? true : false;
   const [field, conditional, valor] = filterQuery;
+
+  // const conditionalFirestore = ['>', '>=', '<', '<='];
   // const isOrderBy = conditionalFirestore.includes(conditional);
 
-  // console.log('isFilterQuery:', isFilterQuery);
-  // console.log('isOrderBy:', isOrderBy);
-
   useEffect(() => {
+    if (!filterQuery.length) return;
+
     const getDocsCollection = async () => {
       let q;
-      if (isFilterQuery) {
+      if (filterQuery !== 'all') {
+        console.log('IF');
         q = query(
           collection(db, collectionName),
           where(field, conditional, valor)
         );
       } else {
+        console.log('ELSE');
         q = query(collection(db, collectionName));
       }
 
@@ -43,7 +47,7 @@ const useGetDocsFilter = (collectionName, filterQuery = []) => {
     };
 
     getDocsCollection();
-  }, [collectionName, isFilterQuery, field, conditional, valor]);
+  }, [collectionName, filterQuery, field, conditional, valor]);
 
   return docsCollection;
 };

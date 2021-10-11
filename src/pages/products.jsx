@@ -10,20 +10,39 @@ import Loader from '../components/Loader/Loader';
 import ProductCard from '../components/ProductCard/ProductCard';
 
 const ProductsPage = () => {
-  const { category: categoryParam } = useParams();
+  const { category } = useParams();
+  const categoryParam = category ? category : 'all';
+
   console.log('categoryParam:', categoryParam);
 
   const { data: categories } = useGetDocs('categories');
-  console.log('categories:', categories);
 
   const paramData = categories.find(
     (document) => document.slug === categoryParam
   );
-  console.log('paramData:', paramData);
 
-  const filterQuery = paramData ? ['categoryKey', '==', paramData.key] : '';
+  console.log('paramData:', !!paramData);
 
-  const { data: products, loader } = useGetDocsFilter('products', filterQuery);
+  // let isParamData =
+  //   category && !!paramData ? ['categoryKey', '==', paramData.key] : [];
+
+  let isParamData = category && !!paramData ? true : false;
+
+  console.log('isParamData:', isParamData);
+
+  let other = isParamData ? ['categoryKey', '==', paramData.key] : [];
+
+  console.log('other:', other);
+
+  let final = category ? other : 'all';
+
+  console.log('final:', final);
+
+  const filterQuery = paramData ? ['categoryKey', '==', paramData.key] : [];
+
+  const { data: products, loader } = useGetDocsFilter('products', final);
+
+  console.log('products:', products);
 
   return (
     <Layout pageId="product">
