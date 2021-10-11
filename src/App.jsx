@@ -12,6 +12,7 @@ import ExclusivePage from './pages/exclusive';
 import ProductsPage from './pages/products';
 import ProductDetailPage from './pages/productDetail';
 import CartPage from './pages/cart';
+import OrderPage from './pages/orderPage';
 import NotFoundPage from './pages/notFound';
 
 import UploadDataFirestore from './UploadDataFirestore';
@@ -32,6 +33,7 @@ function App() {
           <Route exact path="/productos/:category" component={ProductsPage} />
           <Route path="/producto/:id" component={ProductDetailPage} />
           <Route exact path="/cart" component={CartPage} />
+          <Route exact path="/order/:id" component={OrderPage} />
 
           <Route path="*" component={NotFoundPage} />
         </Switch>

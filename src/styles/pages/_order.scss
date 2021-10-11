@@ -1,0 +1,38 @@
+#order {
+  display: flex;
+  align-items: center;
+  padding-block: 50px;
+  text-align: center;
+  min-height: 100vh;
+
+  .container {
+    padding-block: 0;
+  }
+
+  picture {
+    img {
+      margin-inline: auto;
+    }
+  }
+
+  h1 {
+    margin: 25px 0 50px;
+  }
+
+  .box-purchase-order {
+    max-width: 350px;
+    width: 100%;
+    background-color: $white;
+    padding: 25px 0;
+    margin: 25px auto 30px;
+
+    .text {
+      font-size: 18px;
+      margin: 0 0 10px;
+    }
+  }
+
+  .btn {
+    margin-top: 50px;
+  }
+}
