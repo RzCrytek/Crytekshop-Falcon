@@ -6,6 +6,8 @@ import imageConfirmed from './../images/icons/confirmed.svg';
 import useGetDoc from '../hooks/useGetDoc';
 import Loader from '../components/Loader/Loader';
 
+import imageLogo from '../images/logo.svg';
+
 const OrderPage = () => {
   const { id } = useParams();
 
@@ -21,12 +23,22 @@ const OrderPage = () => {
 
   return (
     <main className="main" id="order">
+      <div className="banner">
+        <picture>
+          <img src={imageLogo} alt="Logo" />
+        </picture>
+      </div>
+
       <div className="container">
         <picture>
-          <img src={imageConfirmed} alt="Imagen de pago confirmado" />
+          <img
+            src={imageConfirmed}
+            alt="Imagen de pago confirmado"
+            width="100px"
+          />
         </picture>
 
-        <h1>Order confirmada</h1>
+        <h1>ORDER CONFIRMADA</h1>
 
         <p>Muchas gracias por comprar en CrytekShop</p>
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Redirect, useParams } from 'react-router';
+import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 
 import useGetDoc from '../hooks/useGetDoc';
@@ -21,7 +21,6 @@ const ProductDetailPage = () => {
 
   console.log('product:', product);
 
-  // if (!isProduct) return <Redirect to="/404" />;
   if (!isProduct) return <NotFoundPage />;
 
   return (
