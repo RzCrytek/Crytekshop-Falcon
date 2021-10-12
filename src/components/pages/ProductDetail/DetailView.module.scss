@@ -9,12 +9,12 @@
 
 .col {
   width: 50%;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-inline: 48px;
 }
 
 .imageContent {
   @extend .col;
+  background-color: $white;
 
   picture {
     img {

@@ -42,6 +42,8 @@
     .summary-content {
       background-color: $white;
       padding: 32px 16px;
+      position: sticky;
+      top: 60px;
     }
 
     h2 {

@@ -9,6 +9,8 @@ import imageNoPhoto from '../../../images/no-photo.png';
 import ItemCount from '../../ItemCount/ItemCount';
 
 const DetailView = ({ detail }) => {
+  console.log('detail:', detail);
+
   const {
     images,
     brand,

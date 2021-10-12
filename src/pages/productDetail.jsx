@@ -1,39 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
-import { useParams } from 'react-router';
+import { Redirect, useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 
-import { doc, getDoc } from '@firebase/firestore';
-import db from '../firebase/firebaseConfig';
+import useGetDoc from '../hooks/useGetDoc';
 
 import Layout from './_layout';
-
 import Loader from '../components/Loader/Loader';
 import { DetailView } from '../components/pages';
+import NotFoundPage from './notFound';
 
 const ProductDetailPage = () => {
   const { id } = useParams();
 
-  const [loader, setLoader] = useState(true);
-  const [product, setProduct] = useState([]);
+  const {
+    document: product,
+    loader,
+    isDocument: isProduct,
+  } = useGetDoc('products', id);
 
-  useEffect(() => {
-    const getProduct = async () => {
-      const docSnap = await getDoc(doc(db, 'products', `${id}`));
-      console.log('docSnap firebase:', docSnap);
+  console.log('product:', product);
 
-      if (docSnap.exists()) {
-        console.log('Document data:', docSnap.data());
-        setProduct({ id: docSnap.id, ...docSnap.data() });
-        setLoader(false);
-      } else {
-        // doc.data() will be undefined in this case
-        console.log('No existe el documento y/o producto');
-      }
-    };
-
-    getProduct();
-  }, [id]);
+  // if (!isProduct) return <Redirect to="/404" />;
+  if (!isProduct) return <NotFoundPage />;
 
   return (
     <Layout pageId="product-detail">
