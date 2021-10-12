@@ -75,7 +75,7 @@ const CartPage = () => {
                 type="button"
                 onClick={handleCheckout}
               >
-                TOTAL: S/.{getTotalPriceProducts()} | Finalizar compra
+                TOTAL: S/ {getTotalPriceProducts()} | Finalizar compra
               </button>
             </div>
           )}
@@ -90,7 +90,7 @@ const CartPage = () => {
                   Subtotal<span> ({quantity})</span>
                 </p>
                 <p className="price">
-                  <strong>S/.{getTotalPriceProducts()}</strong>
+                  <strong>S/ {getTotalPriceProducts()}</strong>
                 </p>
               </div>
 
@@ -105,7 +105,7 @@ const CartPage = () => {
                 <div className="summary-row">
                   <p className="text">Cupón de descuento</p>
                   <p className="price">
-                    <strong>S/.0.00</strong>
+                    <strong>S/ 0.00</strong>
                   </p>
                 </div>
 
@@ -115,7 +115,7 @@ const CartPage = () => {
                     type="text"
                     placeholder="Ingresa un código"
                   />
-                  <button className="btn btn--primary">APLICAR</button>
+                  <button className="btn btn--stroke">APLICAR</button>
                 </div>
               </div>
 
@@ -123,7 +123,7 @@ const CartPage = () => {
 
               <div className="summary-row total-pay">
                 <p className="text">TOTAL</p>
-                <p className="price">S/.{getTotalPriceProducts()}</p>
+                <p className="price">S/ {getTotalPriceProducts()}</p>
               </div>
             </div>
           </div>

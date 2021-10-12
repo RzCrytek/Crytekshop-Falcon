@@ -53,14 +53,17 @@ const DetailView = ({ detail }) => {
         <p>
           <strong>SKU:</strong> {sku}
         </p>
-        <p className={styles.description}>{description}</p>
+        <div
+          className={styles.description}
+          dangerouslySetInnerHTML={{ __html: description }}
+        ></div>
 
         <div className={styles.price}>
           <p style={{ fontSize: '18px' }}>
             <strong>Precio:</strong>
           </p>
-          <span className={styles.current}>S/. {price.toFixed(2)}</span>
-          {original_price && <del>S/. {original_price.toFixed(2)}</del>}
+          <span className={styles.current}>S/ {price.toFixed(2)}</span>
+          {original_price && <del>S/ {original_price.toFixed(2)}</del>}
         </div>
 
         <div className={styles.wrap}>

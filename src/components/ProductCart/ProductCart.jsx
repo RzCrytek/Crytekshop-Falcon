@@ -37,8 +37,8 @@ const ProductCart = ({ product, removeProduct }) => {
           </div>
 
           <div className={styles.info_prices}>
-            {original_price && <del>S/. {original_price.toFixed(2)}</del>}
-            <h5>S/. {price.toFixed(2)}</h5>
+            {original_price && <del>S/ {original_price.toFixed(2)}</del>}
+            <h5>S/ {price.toFixed(2)}</h5>
           </div>
         </div>
 

@@ -31,8 +31,8 @@ const ProductCard = ({ product, typeProduct }) => {
       <div className={styles.summary}>
         <h2 className={styles.name}>{title}</h2>
         <p className={styles.price}>
-          <span className="current">S/. {price.toFixed(2)}</span>
-          {original_price && <del>S/. {original_price.toFixed(2)}</del>}
+          <span className="current">S/ {price.toFixed(2)}</span>
+          {original_price && <del>S/ {original_price.toFixed(2)}</del>}
         </p>
       </div>
 

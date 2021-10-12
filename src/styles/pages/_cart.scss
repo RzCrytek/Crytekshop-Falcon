@@ -5,7 +5,7 @@
   }
   .order-details {
     background-color: $white;
-    width: 70%;
+    width: 60%;
     padding: 32px 16px;
 
     h2 {
@@ -36,7 +36,7 @@
   }
 
   .order-summary {
-    width: 30%;
+    width: 40%;
     padding-left: 30px;
 
     .summary-content {
@@ -76,13 +76,23 @@
         border-bottom: 0;
       }
 
+      .apply-discount {
+        display: flex;
+        margin-bottom: 12px;
+      }
+
       input {
         width: 100%;
-        height: 50px;
-        line-height: 50px;
+        height: 45px;
+        line-height: 45px;
         border: 1px solid $c-3;
         padding-inline: 8px;
-        margin-bottom: 12px;
+        margin-right: 12px;
+      }
+
+      .btn {
+        width: auto;
+        height: auto;
       }
     }
 
