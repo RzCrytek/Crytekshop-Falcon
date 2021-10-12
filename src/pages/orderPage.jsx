@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import { useParams, Redirect } from 'react-router';
 import { Link } from 'react-router-dom';
 
 import { doc, getDoc } from '@firebase/firestore';
@@ -9,30 +9,40 @@ import imageConfirmed from './../images/icons/confirmed.svg';
 
 const OrderPage = () => {
   const { id } = useParams();
-  const [order, setOrder] = useState();
+  const [isOrder, setIsOrder] = useState(true);
+  const [loader, setLoader] = useState(true);
+  const [order, setOrder] = useState([]);
 
   console.log('ciclo beforeUseEffect');
 
   useEffect(() => {
     console.log('ciclo UseEffect before');
 
-    const getProduct = async () => {
+    const getOrder = async () => {
       const docSnap = await getDoc(doc(db, 'orders', id));
       console.log('docSnap firebase:', docSnap);
+
+      setLoader(false);
 
       if (docSnap.exists()) {
         console.log('Document data:', docSnap.data());
         setOrder({ id: docSnap.id, ...docSnap.data() });
       } else {
+        setIsOrder(false);
         console.log('No existe el documento y/o producto');
       }
     };
 
-    getProduct();
+    getOrder();
   }, [id]);
 
   console.log('ciclo afterUseEffect');
   console.log('order:', order);
+  console.log('order length:', order.length);
+
+  if (loader) return '';
+
+  if (!isOrder) return <Redirect to="/404" />;
 
   return (
     console.log('ciclo render'),
@@ -50,7 +60,9 @@ const OrderPage = () => {
           <div className="box-purchase-order">
             <p className="text">Su orden de compra es:</p>
             <h2 className="number-order">
-              <strong className="semiBold">{order?.id}</strong>
+              <strong className="semiBold">
+                {loader ? 'cargando orden...' : order.id}
+              </strong>
             </h2>
           </div>
 

@@ -1,4 +1,5 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { LsGetData, LsSaveData } from '../helpers/localStorage';
 
 const CartContext = React.createContext();
 CartContext.displayName = 'CartContext';
@@ -6,6 +7,16 @@ CartContext.displayName = 'CartContext';
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [cartWidgetAnimate, setCartWidgetAnimate] = useState(false);
+
+  // Local Storage: setting & getting data
+  useEffect(() => {
+    const cartItemsData = LsGetData('cart');
+    if (cartItemsData) setCart(cartItemsData);
+  }, []);
+
+  useEffect(() => {
+    LsSaveData('cart', cart);
+  }, [cart]);
 
   const addProduct = (product, quantity) => {
     const newProduct = { ...product, quantity };
@@ -31,9 +42,9 @@ export const CartProvider = ({ children }) => {
     return setCart(newCart);
   };
 
-  const clearCart = () => {
-    setCart([]);
-  };
+  // const clearCart = () => {
+  //   setCart([]);
+  // };
 
   const getQuantityProducts = () => {
     const quantity = cart.reduce((acumulado, el) => acumulado + el.quantity, 0);
@@ -74,7 +85,6 @@ export const CartProvider = ({ children }) => {
     setCartWidgetAnimate,
     addProduct,
     removeProduct,
-    clearCart,
     getQuantityProducts,
     getTotalPriceProducts,
     decreaseProduct,
