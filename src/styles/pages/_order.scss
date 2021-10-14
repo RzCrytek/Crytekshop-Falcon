@@ -1,8 +1,8 @@
 #order {
   // display: flex;
-  align-items: center;
-  padding-bottom: 50px;
-  text-align: center;
+  // align-items: center;
+  // padding-bottom: 50px;
+  // text-align: center;
   min-height: 100vh;
 
   .banner {
@@ -14,37 +14,83 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 50px;
   }
 
   .container {
+    display: flex;
+    max-width: 1260px;
     padding-block: 0;
+    padding-inline: 5%;
   }
 
-  picture {
-    img {
-      margin-inline: auto;
+  .information {
+    position: relative;
+    width: 52%;
+    padding-top: 32px;
+    padding-right: 6%;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 100vw;
+      min-height: calc(100vh - 100px);
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-color: $white;
+      box-shadow: -1px 0 0 #e1e1e1 inset;
+      z-index: -1;
     }
   }
 
-  h1 {
-    margin: 25px 0 50px;
-  }
+  .summary-sidebar {
+    position: relative;
+    width: 48%;
+    padding-top: 32px;
+    padding-left: 5%;
 
-  .box-purchase-order {
-    max-width: 350px;
-    width: 100%;
-    background-color: $white;
-    padding: 25px 0;
-    margin: 25px auto 30px;
+    .sidebar-content {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: calc(100vh - 150px);
+    }
 
-    .text {
-      font-size: 18px;
-      margin: 0 0 10px;
+    .ordered-products {
+      overflow-y: auto;
+      flex: 0 1 auto;
+      border-bottom: 1px solid rgba($c-3, 0.6);
+    }
+
+    .order-summary {
+      flex: 0 0 auto;
     }
   }
 
-  .btn {
-    margin-top: 50px;
-  }
+  // picture {
+  //   img {
+  //     margin-inline: auto;
+  //   }
+  // }
+
+  // h1 {
+  //   margin: 25px 0 50px;
+  // }
+
+  // .box-purchase-order {
+  //   max-width: 350px;
+  //   width: 100%;
+  //   background-color: $white;
+  //   padding: 25px 0;
+  //   margin: 25px auto 30px;
+
+  //   .text {
+  //     font-size: 18px;
+  //     margin: 0 0 10px;
+  //   }
+  // }
+
+  // .btn {
+  //   margin-top: 50px;
+  // }
 }

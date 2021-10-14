@@ -4,7 +4,9 @@ import ItemCount from '../ItemCount/ItemCount';
 import styles from './ProductCart.module.scss';
 import imageNoPhoto from '../../images/no-photo.png';
 
-const ProductCart = ({ product, removeProduct }) => {
+const ProductCart = ({ product, removeProduct, ProductCartReadOnly }) => {
+  console.log('product cart:', product);
+
   const {
     images,
     brand,
@@ -19,10 +21,16 @@ const ProductCart = ({ product, removeProduct }) => {
 
   const imageSrc = images?.length ? images[0].src : imageNoPhoto;
 
+  const classReadOnly = ProductCartReadOnly ? `${styles.read_only}` : '';
+
   return (
-    <div className={styles.product_cart}>
+    <div className={`${styles.product_cart} ${classReadOnly}`}>
       <picture>
         <img src={imageSrc} alt={product.images[0].alt} />
+
+        {ProductCartReadOnly && (
+          <span className={styles.thumbnail_quantity}>{quantity}</span>
+        )}
       </picture>
 
       <div className={styles.information}>
@@ -42,16 +50,18 @@ const ProductCart = ({ product, removeProduct }) => {
           </div>
         </div>
 
-        <div className={styles.actions}>
-          <ItemCount stock={stock} quantity={quantity} productId={id} />
-          <button
-            className={styles.delete_product}
-            type="button"
-            onClick={() => removeProduct(id)}
-          >
-            Eliminar
-          </button>
-        </div>
+        {!ProductCartReadOnly && (
+          <div className={styles.actions}>
+            <ItemCount stock={stock} quantity={quantity} productId={id} />
+            <button
+              className={styles.delete_product}
+              type="button"
+              onClick={() => removeProduct(id)}
+            >
+              Eliminar
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

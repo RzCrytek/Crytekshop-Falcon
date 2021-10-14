@@ -35,6 +35,8 @@ const ItemCount = ({
         id="decrease"
         type="button"
         style={{ backgroundImage: "url('/img/icons/minus.svg')" }}
+        aria-label="Disminuye la cantidad en 1"
+        title="Disminuye la cantidad en 1"
         onClick={
           countDetail ? decrement : () => decreaseProduct(productId, qtyProduct)
         }
@@ -53,6 +55,7 @@ const ItemCount = ({
         id="increase"
         type="button"
         style={{ backgroundImage: "url('/img/icons/plus.svg')" }}
+        title="Aumenta la cantidad en 1"
         onClick={
           countDetail
             ? increment

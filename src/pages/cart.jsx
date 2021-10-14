@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import { addDoc, collection } from '@firebase/firestore';
 
 import { useCartContext } from '../context/CartContext';
+import db from '../firebase/firebaseConfig';
 
 import Layout from './_layout';
 import ProductCart from '../components/ProductCart/ProductCart';
-import { addDoc, collection } from '@firebase/firestore';
-import db from '../firebase/firebaseConfig';
+import OrderSummary from '../components/OrderSummary/OrderSummary';
 
 const CartPage = () => {
   const { cart, removeProduct, getQuantityProducts, getTotalPriceProducts } =
@@ -26,6 +27,7 @@ const CartPage = () => {
       },
       items: [...cart],
       fecha: new Date(),
+      quantity,
       total: getTotalPriceProducts(),
     };
 
@@ -75,59 +77,21 @@ const CartPage = () => {
                 type="button"
                 onClick={handleCheckout}
               >
-                TOTAL: S/ {getTotalPriceProducts()} | Finalizar compra
+                Total: S/ {getTotalPriceProducts()} | PAGAR
               </button>
             </div>
           )}
         </div>
 
-        <div className="order-summary">
+        <aside className="cart-summary">
           <div className="summary-content">
             <h2>RESUMEN DE TU PEDIDO</h2>
-            <div className="summary">
-              <div className="summary-row subtotal">
-                <p className="text">
-                  Subtotal<span> ({quantity})</span>
-                </p>
-                <p className="price">
-                  <strong>S/ {getTotalPriceProducts()}</strong>
-                </p>
-              </div>
-
-              <div className="summary-row">
-                <p className="text">Envío</p>
-                <p className="price">
-                  <strong>GRATIS</strong>
-                </p>
-              </div>
-
-              <div className="coupon-code">
-                <div className="summary-row">
-                  <p className="text">Cupón de descuento</p>
-                  <p className="price">
-                    <strong>S/ 0.00</strong>
-                  </p>
-                </div>
-
-                <div className="apply-discount">
-                  <input
-                    className="form-control"
-                    type="text"
-                    placeholder="Ingresa un código"
-                  />
-                  <button className="btn btn--stroke">APLICAR</button>
-                </div>
-              </div>
-
-              <hr />
-
-              <div className="summary-row total-pay">
-                <p className="text">TOTAL</p>
-                <p className="price">S/ {getTotalPriceProducts()}</p>
-              </div>
-            </div>
+            <OrderSummary
+              quantity={quantity}
+              totalPriceProducts={getTotalPriceProducts()}
+            />
           </div>
-        </div>
+        </aside>
       </div>
     </Layout>
   );

@@ -2,10 +2,13 @@ import React from 'react';
 import { useParams, Redirect } from 'react-router';
 import { Link } from 'react-router-dom';
 
-import imageConfirmed from './../images/icons/confirmed.svg';
 import useGetDoc from '../hooks/useGetDoc';
-import Loader from '../components/Loader/Loader';
 
+import Loader from '../components/Loader/Loader';
+import OrderSummary from '../components/OrderSummary/OrderSummary';
+import ProductCart from '../components/ProductCart/ProductCart';
+
+import imageConfirmed from './../images/icons/confirmed.svg';
 import imageLogo from '../images/logo.svg';
 
 const OrderPage = () => {
@@ -30,7 +33,34 @@ const OrderPage = () => {
       </div>
 
       <div className="container">
-        <picture>
+        <section className="information">
+          <h1>demo</h1>
+        </section>
+
+        <aside className="summary-sidebar">
+          <div className="sidebar-content">
+            <div className="ordered-products">
+              {order.items.map((product) => {
+                console.log('product: ', product);
+                return (
+                  <ProductCart
+                    product={product}
+                    key={product.id}
+                    ProductCartReadOnly
+                  />
+                );
+              })}
+            </div>
+
+            <OrderSummary
+              quantity={order.quantity}
+              totalPriceProducts={order.total}
+              SummaryReadOnly
+            />
+          </div>
+        </aside>
+
+        {/* <picture>
           <img
             src={imageConfirmed}
             alt="Imagen de pago confirmado"
@@ -56,7 +86,7 @@ const OrderPage = () => {
 
         <Link className="btn btn-w-auto" to="/productos">
           Seguir comprando
-        </Link>
+        </Link> */}
       </div>
     </main>
   );

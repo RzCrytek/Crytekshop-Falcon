@@ -12,8 +12,33 @@
     margin-bottom: 0;
   }
 
+  &.read_only {
+    background-color: $white;
+    align-items: center;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 8px;
+
+    .thumbnail_quantity {
+      background-color: rgba($c-6, 0.9);
+      color: $white;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 21px;
+      text-align: center;
+      min-width: 21px;
+      height: 21px;
+      padding-inline: 6px;
+      border-radius: 21px;
+      position: absolute;
+      top: -10.5px;
+      right: -10.5px;
+    }
+  }
+
   picture {
     display: block;
+    position: relative;
     width: 100px;
     height: 100px;
     margin-right: 16px;
