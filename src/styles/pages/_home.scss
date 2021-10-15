@@ -1,0 +1,23 @@
+#home {
+  #announcements {
+    background-color: $white;
+    text-align: center;
+    padding: 10px;
+  }
+
+  #banner {
+    background-image: url('../../images/banner/1.png');
+    max-height: 550px;
+
+    .container {
+      display: flex;
+      padding-block: 0;
+
+      .data,
+      picture {
+        display: block;
+        flex-basis: 50%;
+      }
+    }
+  }
+}

@@ -12,7 +12,9 @@ import ExclusivePage from './pages/exclusive';
 import ProductsPage from './pages/products';
 import ProductDetailPage from './pages/productDetail';
 import CartPage from './pages/cart';
-import OrderPage from './pages/orderPage';
+import PaymentPage from './pages/checkout/payment';
+import OrderPage from './pages/checkout/orderPage';
+
 import NotFoundPage from './pages/notFound';
 
 import UploadDataFirestore from './UploadDataFirestore';
@@ -33,7 +35,8 @@ function App() {
           <Route exact path="/productos/:category" component={ProductsPage} />
           <Route path="/producto/:id" component={ProductDetailPage} />
           <Route exact path="/cart" component={CartPage} />
-          <Route exact path="/order/:id" component={OrderPage} />
+          <Route exact path="/checkout/payment" component={PaymentPage} />
+          <Route exact path="/checkout/order/:id" component={OrderPage} />
 
           <Route path="*" component={NotFoundPage} />
         </Switch>

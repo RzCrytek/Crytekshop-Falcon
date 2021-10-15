@@ -2,14 +2,14 @@ import React from 'react';
 import { useParams, Redirect } from 'react-router';
 import { Link } from 'react-router-dom';
 
-import useGetDoc from '../hooks/useGetDoc';
+import useGetDoc from '../../hooks/useGetDoc';
 
-import Loader from '../components/Loader/Loader';
-import OrderSummary from '../components/OrderSummary/OrderSummary';
-import ProductCart from '../components/ProductCart/ProductCart';
+import Loader from '../../components/Loader/Loader';
+import OrderSummary from '../../components/OrderSummary/OrderSummary';
+import ProductCart from '../../components/ProductCart/ProductCart';
 
-import imageConfirmedOutline from './../images/icons/confirmed-outline.svg';
-import imageLogo from '../images/logo.svg';
+import imageLogo from '../../images/logo.svg';
+import imageConfirmedOutline from '../../images/icons/confirmed-outline.svg';
 
 const OrderPage = () => {
   const { id } = useParams();
@@ -47,7 +47,10 @@ const OrderPage = () => {
                   width="50"
                 />
               </picture>
-              <h2>¡Gracias {buyer.name}!</h2>
+              <div>
+                <h2>¡Gracias {buyer.name}!</h2>
+                <p style={{ fontSize: '12px' }}>Orden: #{order.id}</p>
+              </div>
             </div>
 
             <div className="content-data-box">
@@ -146,34 +149,6 @@ const OrderPage = () => {
             />
           </div>
         </aside>
-
-        {/* <picture>
-          <img
-            src={imageConfirmed}
-            alt="Imagen de pago confirmado"
-            width="100px"
-          />
-        </picture>
-
-        <h1>ORDER CONFIRMADA</h1>
-
-        <p>Muchas gracias por comprar en CrytekShop</p>
-
-        <div className="box-purchase-order">
-          <p className="text">Su orden de compra es:</p>
-          <h2 className="number-order">
-            <strong className="semiBold">{order.id}</strong>
-          </h2>
-        </div>
-
-        <p>
-          Recuerda que te estaremos informando por whatsapp <br /> cuando tu
-          pedido este camino a tu casa.
-        </p>
-
-        <Link className="btn btn-w-auto" to="/productos">
-          Seguir comprando
-        </Link> */}
       </div>
     </main>
   );
