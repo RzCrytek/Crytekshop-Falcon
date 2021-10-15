@@ -25,9 +25,10 @@
 
   .information {
     position: relative;
-    width: 52%;
+    width: 58%;
     padding-top: 32px;
     padding-right: 6%;
+    padding-bottom: 5%;
 
     &:before {
       content: '';
@@ -41,11 +42,59 @@
       box-shadow: -1px 0 0 #e1e1e1 inset;
       z-index: -1;
     }
+
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 32px;
+
+      picture {
+        margin-right: 16px;
+      }
+    }
+
+    .content-data-box {
+      border: 1px solid $c-8;
+      border-radius: 5px;
+      padding: 12px 16px;
+      margin-bottom: 16px;
+
+      h3 {
+        color: #333;
+        font-weight: 500;
+        margin-bottom: 8px;
+      }
+
+      p {
+        color: $c-6;
+
+        strong {
+          font-weight: bold;
+        }
+      }
+
+      code {
+        display: inline-block;
+        background-color: #eee;
+        color: $c-6;
+        padding: 8px;
+        border-radius: 5px;
+      }
+
+      table {
+        width: 100%;
+        font-size: 14px;
+
+        td {
+          padding: 8px 0;
+        }
+      }
+    }
   }
 
   .summary-sidebar {
     position: relative;
-    width: 48%;
+    width: 42%;
     padding-top: 32px;
     padding-left: 5%;
 
@@ -64,6 +113,10 @@
 
     .order-summary {
       flex: 0 0 auto;
+
+      .total-pay {
+        color: $peru;
+      }
     }
   }
 
