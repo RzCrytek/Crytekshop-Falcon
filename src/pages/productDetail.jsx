@@ -7,7 +7,8 @@ import useGetDoc from '../hooks/useGetDoc';
 
 import Layout from './_layout';
 import Loader from '../components/Loader/Loader';
-import { DetailView } from '../components/pages';
+import DetailView from '../components/pages/ProductDetail/DetailView';
+
 import NotFoundPage from './notFound';
 
 const ProductDetailPage = () => {
