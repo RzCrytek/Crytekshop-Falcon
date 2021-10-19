@@ -32,9 +32,14 @@ strong {
 .main {
   min-height: calc(100vh - 60px - 49px);
 
-  .container {
-    padding-block: 40px;
-  }
+  // .container {
+  //   padding-block: 40px;
+  // }
+}
+
+#product,
+#exclusive {
+  padding-block: 40px;
 }
 
 .container {
