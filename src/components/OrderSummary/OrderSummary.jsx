@@ -1,38 +1,38 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './OrderSummary.scss';
+import style from './OrderSummary.module.scss';
 
 const OrderSummary = ({ quantity, totalPriceProducts, SummaryReadOnly }) => {
   console.log('SummaryReadOnly:', SummaryReadOnly);
   return (
-    <div className="order-summary">
-      <div className="summary-row subtotal">
-        <p className="text">
+    <div className={style.order_summary}>
+      <div className={`${style.summary_row} ${style.subtotal}`}>
+        <p className={style.text}>
           Subtotal<span> ({quantity})</span>
         </p>
-        <p className="price">
+        <p className={style.price}>
           <strong>S/ {totalPriceProducts}</strong>
         </p>
       </div>
 
-      <div className="summary-row">
-        <p className="text">Envío</p>
-        <p className="price">
+      <div className={style.summary_row}>
+        <p className={style.text}>Envío</p>
+        <p className={style.price}>
           <strong>GRATIS</strong>
         </p>
       </div>
 
-      <div className="summary-row coupon">
-        <div className="coupon-code">
-          <p className="text">Cupón de descuento</p>
-          <p className="price">
+      <div className={`${style.summary_row} ${style.coupon}`}>
+        <div className={style.coupon_code}>
+          <p className={style.text}>Cupón de descuento</p>
+          <p className={style.price}>
             <strong>S/ 0.00</strong>
           </p>
         </div>
 
         {!SummaryReadOnly && (
-          <div className="apply-discount">
+          <div className={style.apply_discount}>
             <input
               className="form-control"
               type="text"
@@ -43,9 +43,9 @@ const OrderSummary = ({ quantity, totalPriceProducts, SummaryReadOnly }) => {
         )}
       </div>
 
-      <div className="summary-row total-pay">
-        <p className="text">TOTAL</p>
-        <p className="price">S/ {totalPriceProducts}</p>
+      <div className={`${style.summary_row} ${style.total_pay} total-pay`}>
+        <p className={style.text}>TOTAL</p>
+        <p className={style.price}>S/ {totalPriceProducts}</p>
       </div>
       {!SummaryReadOnly && (
         <>

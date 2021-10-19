@@ -10,7 +10,7 @@ function Layout({ children, pageId }) {
 
   return (
     <div id="wrapper">
-      <main className="checkout" id={pageId}>
+      <main className="lyt-checkout" id={pageId}>
         <div className="banner">
           <Link to="/">
             <picture>
@@ -22,7 +22,6 @@ function Layout({ children, pageId }) {
         <div className="container">
           <section className="information">
             <div className="information-content">
-              <h1>INFORMATION CONTENT</h1>
               {/* {children[1]} */}
               {childInformation}
             </div>
@@ -30,7 +29,6 @@ function Layout({ children, pageId }) {
 
           <aside className="summary-sidebar">
             <div className="sidebar-content">
-              <h1>siderbar content</h1>
               {/* {children[2]} */}
               {childSidebar}
             </div>

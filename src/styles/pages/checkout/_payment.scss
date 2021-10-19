@@ -1,0 +1,30 @@
+#payment {
+  .breadcrumb {
+    margin-bottom: 24px;
+
+    li {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 500;
+      color: $c-1;
+
+      a {
+        color: lightseagreen;
+      }
+
+      span {
+        display: inline-block;
+        color: $c-2;
+        margin-inline: 8px;
+      }
+
+      &.active {
+        color: $peru;
+      }
+    }
+  }
+
+  h2 {
+    margin-bottom: 16px;
+  }
+}

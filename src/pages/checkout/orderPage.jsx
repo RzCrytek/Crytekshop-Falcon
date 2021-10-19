@@ -27,7 +27,7 @@ const OrderPage = () => {
   if (!isOrder) return <Redirect to="/404" />;
 
   return (
-    <main className="main" id="order">
+    <main className="lyt-checkout" id="order">
       <div className="banner">
         <Link to="/">
           <picture>
@@ -142,11 +142,13 @@ const OrderPage = () => {
               })}
             </div>
 
-            <OrderSummary
-              quantity={order.quantity}
-              totalPriceProducts={order.total}
-              SummaryReadOnly
-            />
+            <div className="order-summary">
+              <OrderSummary
+                quantity={order.quantity}
+                totalPriceProducts={order.total}
+                SummaryReadOnly
+              />
+            </div>
           </div>
         </aside>
       </div>

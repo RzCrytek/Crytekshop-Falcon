@@ -1,11 +1,11 @@
 @import './src/styles/settings';
 
-.order-summary {
+.order_summary {
   strong {
     font-weight: 600;
   }
 
-  .summary-row {
+  .summary_row {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid rgba($c-3, 0.6);
@@ -26,12 +26,12 @@
     display: flex;
     flex-direction: column;
 
-    .coupon-code {
+    .coupon_code {
       display: flex;
       justify-content: space-between;
     }
 
-    .apply-discount {
+    .apply_discount {
       display: flex;
       margin-block: 8px;
     }
@@ -45,13 +45,13 @@
       margin-right: 12px;
     }
 
-    .btn {
+    button {
       width: auto;
       height: auto;
     }
   }
 
-  .total-pay {
+  .total_pay {
     align-items: center;
     font-weight: 800;
 
