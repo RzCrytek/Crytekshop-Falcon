@@ -18,6 +18,95 @@
         display: block;
         flex-basis: 50%;
       }
+
+      .data {
+        display: flex;
+        align-items: center;
+        color: $white;
+
+        h1 {
+          font-size: 50px;
+        }
+
+        .description {
+          font-size: 18px;
+          margin: 8px 0 24px;
+        }
+      }
+    }
+  }
+
+  #range-collections {
+    background-color: $l-yellow;
+    width: 100%;
+    height: auto;
+    padding: 8px 0;
+
+    .slick-track {
+      display: flex;
+      align-items: center;
+    }
+
+    .slick-slide {
+      margin-inline: 24px;
+    }
+
+    picture {
+      width: 200px;
+      display: block;
+
+      img {
+        margin-inline: auto;
+        height: 50px;
+      }
+    }
+  }
+
+  #choose {
+    .container {
+      display: flex;
+    }
+
+    .item {
+      background-repeat: no-repeat;
+      background-position: right center;
+      background-size: cover;
+      background-attachment: scroll;
+      display: flex;
+      align-items: center;
+      width: 50%;
+      min-height: 300px;
+      padding-block: 3rem;
+
+      &:first-child {
+        background-image: url('../../images/rick-bg.png');
+        background-color: $l-green;
+
+        // &:hover {
+        //   background-image: linear-gradient(
+        //       rgba($black, 0.5),
+        //       rgba($black, 0.5)
+        //     ),
+        //     url('../../images/rick-bg.png');
+        // }
+      }
+
+      &:last-child {
+        // background-image: linear-gradient(rgba($black, 0.5), rgba($black, 0.5)),
+        //   url('../../images/starlight-bg.png');
+        background-image: url('../../images/starlight-bg.png');
+        background-color: $l-blue;
+      }
+
+      .data {
+        max-width: 75%;
+        flex-basis: 75%;
+        padding: 32px;
+
+        h2 {
+          margin-bottom: 16px;
+        }
+      }
     }
   }
 }

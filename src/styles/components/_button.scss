@@ -58,6 +58,17 @@
     width: auto;
   }
 
+  &--white {
+    background-color: $white;
+    border-color: $white;
+    color: $c-1;
+
+    &:hover {
+      background-color: $c-1;
+      color: $white;
+    }
+  }
+
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;

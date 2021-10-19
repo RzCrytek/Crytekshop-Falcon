@@ -1,33 +1,40 @@
 import React from 'react';
 
 import Layout from './_layout';
-
-import banner1 from '../images/banner/1.png';
-import image1 from '../images/banner/image-1.png';
-import imageOptions from '../images/options.png';
+import { Banner, RangeCollections } from '../components/pages/Home';
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   return (
     <Layout pageId="home">
       <section id="announcements">
-        <h2>ENVÍO GRATIS</h2>
+        <h3>ENVÍO GRATIS</h3>
       </section>
 
-      <section id="banner">
-        <div className="container">
-          <div className="data">
-            <h1>demo</h1>
-          </div>
+      <Banner />
 
-          <picture>
-            <img src={image1} alt="Imagen banner" />
-          </picture>
+      <section id="choose">
+        <div className="container">
+          <div className="item">
+            <div className="data">
+              <h2>COLECCIONABLES EXCLUSIVOS</h2>
+              <Link class="btn btn--white btn-w-auto" to="/exclusivos">
+                Comprar
+              </Link>
+            </div>
+          </div>
+          <div className="item">
+            <div className="data">
+              <h2>TODOS LOS EVENTOS DE MARVEL</h2>
+              <Link class="btn btn--white btn-w-auto" to="/eventos">
+                Ver los eventos
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section id="options">
-        <img src={imageOptions} alt="Imagen de opciones" />
-      </section>
+      <RangeCollections />
     </Layout>
   );
 };
