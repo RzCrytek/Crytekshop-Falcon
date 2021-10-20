@@ -69,6 +69,16 @@
     }
   }
 
+  &--red {
+    background-color: $l-red;
+    border-color: $l-red;
+    color: $white;
+
+    &:hover {
+      background-color: darken($l-red, 10%);
+    }
+  }
+
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;

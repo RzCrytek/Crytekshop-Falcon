@@ -1,11 +1,25 @@
 #events {
-  padding-block: 40px;
+  padding-bottom: 40px;
+
+  #banner {
+    background-image: linear-gradient(rgba($black, 0.5), rgba($black, 0.5)),
+      url('../../images/marvel-bg.jpg');
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 400px;
+    clip-path: polygon(0 0, 0 98%, 100% 92%, 100% 0);
+  }
 
   .events-box {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 32px 24px;
+    min-height: 200px;
     margin-top: 24px;
 
     .event {
@@ -17,22 +31,34 @@
       font-weight: 500;
       text-decoration: none;
       transition: all 0.3s ease-out;
+      overflow: hidden;
 
-      &:after {
+      &:before {
         content: '';
         transition: $t-1;
       }
 
       &:hover {
-        &:after {
-          content: attr(data-title);
+        &:before {
           background-color: rgba($black, 0.5);
           width: 100%;
-          height: 100%;
+          height: 85%;
           position: absolute;
           top: 0;
           left: 0;
         }
+
+        .go {
+          top: 50%;
+        }
+      }
+
+      .go {
+        position: absolute;
+        top: -10%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: $t-1;
       }
 
       picture {

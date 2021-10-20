@@ -10,33 +10,33 @@ const EventsPage = () => {
 
   return (
     <Layout pageId="events">
+      <section id="banner">
+        <h1>EVENTOS</h1>
+      </section>
+
       <div className="container">
-        <div className="options">
-          <h2>LISTA DE EVENTOS DE MARVEL</h2>
+        <div className="events-box">
+          {loader && <Loader />}
+          {events.map((event) => {
+            const image = `${event.thumbnail.path}.${event.thumbnail.extension}`;
+            const link = event.urls[0]?.url ?? '!#';
 
-          <div className="events-box">
-            {loader && <Loader />}
-            {events.map((event) => {
-              const image = `${event.thumbnail.path}.${event.thumbnail.extension}`;
-              const link = event.urls[0]?.url ?? '!#';
-
-              return (
-                <a
-                  className="event"
-                  href={link}
-                  target="_blank"
-                  rel="noreferrer"
-                  data-title="VER EVENTO"
-                  key={event.id}
-                >
-                  <picture>
-                    <img src={image} alt={event.title} />
-                  </picture>
-                  <h2 className="title">{event.title}</h2>
-                </a>
-              );
-            })}
-          </div>
+            return (
+              <a
+                className="event"
+                href={link}
+                target="_blank"
+                rel="noreferrer"
+                key={event.id}
+              >
+                <span className="go btn btn--red btn-w-auto">IR AL EVENTO</span>
+                <picture>
+                  <img src={image} alt={event.title} />
+                </picture>
+                <h2 className="title">{event.title}</h2>
+              </a>
+            );
+          })}
         </div>
       </div>
     </Layout>

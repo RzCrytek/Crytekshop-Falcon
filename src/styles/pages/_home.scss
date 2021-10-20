@@ -62,6 +62,8 @@
   }
 
   #choose {
+    padding-block: 48px;
+
     .container {
       display: flex;
     }
@@ -80,19 +82,9 @@
       &:first-child {
         background-image: url('../../images/rick-bg.png');
         background-color: $l-green;
-
-        // &:hover {
-        //   background-image: linear-gradient(
-        //       rgba($black, 0.5),
-        //       rgba($black, 0.5)
-        //     ),
-        //     url('../../images/rick-bg.png');
-        // }
       }
 
       &:last-child {
-        // background-image: linear-gradient(rgba($black, 0.5), rgba($black, 0.5)),
-        //   url('../../images/starlight-bg.png');
         background-image: url('../../images/starlight-bg.png');
         background-color: $l-blue;
       }
