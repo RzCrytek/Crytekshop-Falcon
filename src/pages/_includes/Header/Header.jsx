@@ -35,6 +35,10 @@ const Header = () => {
             </li> */}
 
             <li>
+              <NavLink to="/eventos">Eventos</NavLink>
+            </li>
+
+            <li>
               <NavLink to="/exclusivos" activeClassName="active">
                 exclusivos
               </NavLink>

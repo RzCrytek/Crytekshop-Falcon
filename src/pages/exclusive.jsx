@@ -10,7 +10,7 @@ const ExclusivePage = () => {
   const { data: products, loader } = useGetDocsFilter('products', filterQuery);
 
   return (
-    <Layout pageId="exclusive">
+    <Layout pageId="products">
       <div className="container">
         <div className="options">
           <h2>PRODUCTOS EXCLUSIVOS</h2>
