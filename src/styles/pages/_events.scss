@@ -46,10 +46,18 @@
           position: absolute;
           top: 0;
           left: 0;
+          z-index: 1;
         }
 
         .go {
           top: 50%;
+          z-index: 1;
+        }
+
+        picture {
+          img {
+            transform: scale(1.1);
+          }
         }
       }
 
@@ -63,13 +71,12 @@
 
       picture {
         display: block;
-        // height: 300px;
+        overflow: hidden;
 
-        // img {
-        //   width: 100%;
-        //   height: 100%;
-        //   object-fit: cover;
-        // }
+        img {
+          transform: scale(1);
+          transition: $t-1;
+        }
       }
 
       h2 {
