@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="22px" viewBox="0 0 25 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>i-cart-white</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Assets" transform="translate(-620.000000, -19.000000)" fill="#FFFFFF">
+            <g id="i-cart-white" transform="translate(620.000000, 19.000000)">
+                <path d="M23.7494436,5.14285714 C24.159434,5.14285714 24.543175,5.34985714 24.7769195,5.697 C25.0106641,6.04285714 25.0644128,6.48514286 24.9206662,6.88114286 L21.170754,17.1668571 C20.9870083,17.667 20.5207693,18 19.9995315,18 L9.99976573,18 C9.49477756,18 9.03978822,17.6875714 8.84604276,17.2092857 L2.91618168,2.57142857 L0,2.57142857 L0,0 L2.91618168,0 C3.92865796,0 4.83363676,0.619714286 5.22362763,1.58142857 L6.66609383,5.14285714 L23.7494436,5.14285714 Z M10.8334962,15.4285714 L19.1333018,15.4285714 L21.9457359,7.71428571 L7.70856941,7.71428571 L10.8334962,15.4285714 Z" id="Shape"></path>
+                <circle id="Oval" fill-rule="nonzero" cx="11" cy="20" r="2"></circle>
+                <circle id="Oval" fill-rule="nonzero" cx="19" cy="20" r="2"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

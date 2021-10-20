@@ -18,16 +18,13 @@ const ExclusivePage = () => {
 
         <section className="cards-box">
           {loader && <Loader />}
-          {products.map((product) => {
-            /* console.log('product:', product); */
-            return (
-              <ProductCard
-                key={product.id}
-                product={product}
-                typeProduct={true}
-              />
-            );
-          })}
+          {products.map((product) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+              typeProduct={true}
+            />
+          ))}
         </section>
       </div>
     </Layout>

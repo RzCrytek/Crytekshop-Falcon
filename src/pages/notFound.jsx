@@ -18,6 +18,7 @@ const NotFoundPage = () => {
           <button className="btn btn--primary" onClick={() => history.goBack()}>
             Volver a la vista anterior
           </button>
+
           <Link className="btn btn--back" to="/">
             Volver al Inicio
           </Link>

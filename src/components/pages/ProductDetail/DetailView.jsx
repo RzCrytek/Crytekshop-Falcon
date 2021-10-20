@@ -4,9 +4,11 @@ import { Link } from 'react-router-dom';
 import { useCartContext } from '../../../context/CartContext';
 
 import styles from './DetailView.module.scss';
-import imageNoPhoto from '../../../images/no-photo.png';
 
 import ItemCount from '../../ItemCount/ItemCount';
+
+import imageNoPhoto from '../../../images/no-photo.png';
+import icoCart from '../../../images/icons/cart--white.svg';
 
 const DetailView = ({ detail }) => {
   console.log('detail:', detail);
@@ -79,11 +81,12 @@ const DetailView = ({ detail }) => {
             </Link>
           ) : (
             <button
-              className={`btn ${styles.btn}`}
+              className={`btn btn--animate-icon ${styles.btn}`}
               onClick={onAdd}
               disabled={!inStock}
             >
-              AGREGAR A CARRITO
+              <img src={icoCart} alt="Cart" />
+              <span>AGREGAR A CARRITO</span>
             </button>
           )}
         </div>
