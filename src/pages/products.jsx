@@ -26,7 +26,7 @@ const ProductsPage = () => {
   const { data: products, loader } = useGetDocsFilter('products', filterQuery);
 
   return (
-    <Layout pageId="product">
+    <Layout pageId="products">
       <div className="container">
         <div className="options">
           <h2>LISTA DE PRODUCTOS</h2>

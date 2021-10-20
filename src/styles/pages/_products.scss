@@ -1,0 +1,15 @@
+#products {
+  padding-block: 40px;
+
+  .nav-category {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+
+    .btn {
+      width: auto;
+      padding-inline: 24px;
+      margin-inline: 8px;
+    }
+  }
+}
