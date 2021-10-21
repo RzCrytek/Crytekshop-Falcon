@@ -46,7 +46,7 @@ const CartPage = () => {
 
           {cart.length > 0 && (
             <div className="buttons">
-              <Link className="btn btn-w-auto" to="/checkout/payment">
+              <Link className="btn btn--blue" to="/checkout/payment">
                 Total: S/ {getTotalPriceProducts()} | PAGAR
               </Link>
             </div>

@@ -8,7 +8,7 @@ import db from '../../firebase/firebaseConfig';
 import Layout from './_layout';
 import ProductCart from '../../components/ProductCart/ProductCart';
 import OrderSummary from '../../components/OrderSummary/OrderSummary';
-import { LsRemoveData } from '../../helpers/localStorage';
+// import { LsRemoveData } from '../../helpers/localStorage';
 
 const initialForm = {
   method_payment: '',
@@ -73,8 +73,8 @@ const PaymentPage = () => {
     console.log(newOrder);
 
     const docRef = await addDoc(collection(db, 'orders'), newOrder);
-    console.log('Document written with ID: ', docRef);
-    console.log('Document written with ID: ', docRef.id);
+    // console.log('Document written with ID: ', docRef);
+    // console.log('Document written with ID: ', docRef.id);
 
     history.push('/checkout/order/' + docRef.id);
     // LsRemoveData('cart');
@@ -201,11 +201,7 @@ const PaymentPage = () => {
             </div>
           </div>
 
-          <button
-            className="btn btn-w-auto"
-            type="submit"
-            disabled={formErrors}
-          >
+          <button className="btn" type="submit" disabled={formErrors}>
             FINALIZAR COMPRA
           </button>
         </form>

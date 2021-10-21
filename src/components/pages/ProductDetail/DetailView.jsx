@@ -81,7 +81,7 @@ const DetailView = ({ detail }) => {
             </Link>
           ) : (
             <button
-              className={`btn btn--animate-icon ${styles.btn}`}
+              className={`btn btn--animate-icon full ${styles.btn}`}
               onClick={onAdd}
               disabled={!inStock}
             >

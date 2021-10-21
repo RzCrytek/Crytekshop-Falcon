@@ -15,7 +15,7 @@ const Banner = () => {
               ¡Agrega algo extra a tu colección con Pop!
             </p>
 
-            <Link className="btn btn--white btn-w-auto" to="/productos">
+            <Link className="btn btn--white" to="/productos">
               COMPRAR
             </Link>
           </div>

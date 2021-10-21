@@ -10,8 +10,8 @@
 .btn {
   @extend %font-robotoC;
   display: inline-block;
-  background: $peru;
-  width: 100%;
+  background-color: $peru;
+  width: auto;
   height: 40px;
   line-height: 40px;
   font-size: 18px;
@@ -19,43 +19,20 @@
   text-align: center;
   text-decoration: none;
   padding-inline: 16px;
-  border: 1px solid $peru;
+  border: 1px solid transparent;
   transition: $t-1;
 
   &:hover {
-    background-color: $peru;
+    background-color: darken($peru, 10%);
   }
 
-  &--stroke {
-    background: $c-1;
-    border: 1px solid $peru;
-
-    &.active {
-      background-color: $peru;
-    }
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 
-  &--back {
-    background-color: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 0;
-
-    &:hover {
-      background-color: transparent;
-    }
-
-    .ico {
-      display: inline-block;
-      width: 10px;
-      height: 16px;
-      margin-right: 8px;
-    }
-  }
-
-  &-w-auto {
-    width: auto;
+  &.full {
+    width: 100%;
   }
 
   &--white {
@@ -72,18 +49,70 @@
   &--red {
     background-color: $l-red;
     border-color: $l-red;
-    color: $white;
 
     &:hover {
       background-color: darken($l-red, 10%);
     }
   }
 
+  &--green {
+    background-color: $l-green;
+    border-color: $l-green;
+
+    &:hover {
+      background-color: darken($l-green, 10%);
+    }
+  }
+
+  &--yellow {
+    background-color: $l-yellow;
+    border-color: $l-yellow;
+
+    &:hover {
+      background-color: darken($l-yellow, 10%);
+    }
+  }
+
+  &--blue {
+    background-color: $l-blue;
+    border-color: $l-blue;
+
+    &:hover {
+      background-color: darken($l-blue, 10%);
+    }
+  }
+
+  &--stroke {
+    background: $c-1;
+    border-color: $peru;
+
+    &.active,
+    &:hover {
+      background-color: $peru;
+    }
+  }
+
+  &--back {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    .ico {
+      display: inline-block;
+      width: 10px;
+      height: 16px;
+      margin-right: 8px;
+    }
+  }
+
   &--animate-stroke {
     position: relative;
     background-color: transparent;
-    width: auto;
-    border: 0;
     color: $c-1;
 
     svg {
@@ -107,7 +136,6 @@
 
     &:hover {
       background-color: transparent;
-      color: $c-1;
 
       rect {
         stroke-dashoffset: 0;
@@ -153,10 +181,5 @@
         transform: translateX(0);
       }
     }
-  }
-
-  &:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
   }
 }

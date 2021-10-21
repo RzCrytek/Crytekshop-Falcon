@@ -29,7 +29,7 @@ const EventsPage = () => {
                 rel="noreferrer"
                 key={event.id}
               >
-                <span className="go btn btn--red btn-w-auto">IR AL EVENTO</span>
+                <span className="go btn btn--red">IR AL EVENTO</span>
                 <picture>
                   <img src={image} alt={event.title} />
                 </picture>

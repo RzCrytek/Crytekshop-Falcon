@@ -10,6 +10,7 @@
 
       a {
         color: lightseagreen;
+        border-bottom: 1px solid lightseagreen;
       }
 
       span {
@@ -20,6 +21,7 @@
 
       &.active {
         color: $peru;
+        font-weight: 700;
       }
     }
   }

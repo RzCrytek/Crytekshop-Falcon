@@ -8,7 +8,7 @@ const Choose = () => {
         <div className="item">
           <div className="data">
             <h2>COLECCIONABLES EXCLUSIVOS</h2>
-            <Link class="btn btn--white btn-w-auto" to="/exclusivos">
+            <Link class="btn btn--white" to="/exclusivos">
               Comprar
             </Link>
           </div>
@@ -16,7 +16,7 @@ const Choose = () => {
         <div className="item">
           <div className="data">
             <h2>TODOS LOS EVENTOS DE MARVEL</h2>
-            <Link class="btn btn--white btn-w-auto" to="/eventos">
+            <Link class="btn btn--white" to="/eventos">
               Ver los eventos
             </Link>
           </div>

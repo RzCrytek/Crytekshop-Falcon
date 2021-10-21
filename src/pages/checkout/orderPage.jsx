@@ -126,7 +126,7 @@ const OrderPage = () => {
               </table>
             </div>
 
-            <Link className="btn btn-w-auto" to="/productos">
+            <Link className="btn btn--green" to="/productos">
               Seguir comprando
             </Link>
           </div>

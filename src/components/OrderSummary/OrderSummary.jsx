@@ -38,7 +38,7 @@ const OrderSummary = ({ quantity, totalPriceProducts, SummaryReadOnly }) => {
               type="text"
               placeholder="Ingresa un código"
             />
-            <button className="btn btn--stroke">APLICAR</button>
+            <button className="btn btn--yellow">APLICAR</button>
           </div>
         )}
       </div>
@@ -50,7 +50,7 @@ const OrderSummary = ({ quantity, totalPriceProducts, SummaryReadOnly }) => {
       {!SummaryReadOnly && (
         <>
           <br />
-          <Link className="btn btn--primary" to="/checkout/payment">
+          <Link className="btn btn--green full" to="/checkout/payment">
             PROCESAR COMPRA
           </Link>
         </>

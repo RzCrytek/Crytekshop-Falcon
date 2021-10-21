@@ -15,7 +15,7 @@ const NotFoundPage = () => {
         <img src={imageNoPhoto} alt="No hay imagen" />
 
         <div className="buttons">
-          <button className="btn btn--primary" onClick={() => history.goBack()}>
+          <button className="btn" onClick={() => history.goBack()}>
             Volver a la vista anterior
           </button>
 
