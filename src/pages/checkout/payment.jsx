@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 
 import { useCartContext } from '../../context/CartContext';
+import { addDoc, collection } from '@firebase/firestore';
+import db from '../../firebase/firebaseConfig';
 
 import Layout from './_layout';
 import ProductCart from '../../components/ProductCart/ProductCart';
 import OrderSummary from '../../components/OrderSummary/OrderSummary';
+import { LsRemoveData } from '../../helpers/localStorage';
 
 const initialForm = {
   method_payment: '',
@@ -13,13 +16,32 @@ const initialForm = {
   name: '',
   last_name: '',
   address: '',
-  phone: null,
+  phone: '',
 };
 
 const PaymentPage = () => {
   const { cart, getQuantityProducts, getTotalPriceProducts } = useCartContext();
+  const quantity = getQuantityProducts();
+
+  const history = useHistory();
 
   const [form, setForm] = useState(initialForm);
+  const [formErrors, setFormErrors] = useState(true);
+
+  useEffect(() => {
+    if (
+      !form.method_payment ||
+      !form.email ||
+      !form.name ||
+      !form.last_name ||
+      !form.address ||
+      !form.phone
+    ) {
+      setFormErrors(true);
+    } else {
+      setFormErrors(false);
+    }
+  }, [form]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -30,10 +52,32 @@ const PaymentPage = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('submit', e);
     console.log('form: ', form);
+
+    const newOrder = {
+      method_payment: form.method_payment,
+      buyer: {
+        name: form.name,
+        phone: form.phone,
+        email: form.email,
+      },
+      items: [...cart],
+      fecha: new Date(),
+      quantity,
+      total: getTotalPriceProducts(),
+    };
+
+    console.log(newOrder);
+
+    const docRef = await addDoc(collection(db, 'orders'), newOrder);
+    console.log('Document written with ID: ', docRef);
+    console.log('Document written with ID: ', docRef.id);
+
+    history.push('/checkout/order/' + docRef.id);
+    // LsRemoveData('cart');
   };
 
   return (
@@ -50,7 +94,7 @@ const PaymentPage = () => {
         </nav>
 
         <pre>{JSON.stringify(form, null, 2)}</pre>
-        <form action="">
+        <form onSubmit={handleSubmit}>
           <h2>Método de pago en su domicilio</h2>
 
           <div className="form-half auto">
@@ -160,7 +204,7 @@ const PaymentPage = () => {
           <button
             className="btn btn-w-auto"
             type="submit"
-            onClick={handleSubmit}
+            disabled={formErrors}
           >
             FINALIZAR COMPRA
           </button>

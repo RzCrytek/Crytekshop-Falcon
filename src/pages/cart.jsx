@@ -1,9 +1,7 @@
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import { addDoc, collection } from '@firebase/firestore';
+import { Link } from 'react-router-dom';
 
 import { useCartContext } from '../context/CartContext';
-import db from '../firebase/firebaseConfig';
 
 import Layout from './_layout';
 import ProductCart from '../components/ProductCart/ProductCart';
@@ -13,32 +11,8 @@ const CartPage = () => {
   const { cart, removeProduct, getQuantityProducts, getTotalPriceProducts } =
     useCartContext();
 
-  const history = useHistory();
-
   const quantity = getQuantityProducts();
   const messageQuantity = quantity > 1 ? 'Productos' : 'Producto';
-
-  const handleCheckout = async () => {
-    const newOrder = {
-      buyer: {
-        name: 'Ivan',
-        phone: '+51986140325',
-        email: 'rz.crytek@gmail.com',
-      },
-      items: [...cart],
-      fecha: new Date(),
-      quantity,
-      total: getTotalPriceProducts(),
-    };
-
-    console.log(newOrder);
-
-    const docRef = await addDoc(collection(db, 'orders'), newOrder);
-    console.log('Document written with ID: ', docRef);
-    console.log('Document written with ID: ', docRef.id);
-
-    history.push('/order/' + docRef.id);
-  };
 
   return (
     <Layout pageId="cart">
@@ -72,13 +46,9 @@ const CartPage = () => {
 
           {cart.length > 0 && (
             <div className="buttons">
-              <button
-                className="btn btn-w-auto"
-                type="button"
-                onClick={handleCheckout}
-              >
+              <Link className="btn btn-w-auto" to="/checkout/payment">
                 Total: S/ {getTotalPriceProducts()} | PAGAR
-              </button>
+              </Link>
             </div>
           )}
         </div>

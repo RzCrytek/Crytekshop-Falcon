@@ -11,7 +11,7 @@ const EventsPage = () => {
   return (
     <Layout pageId="events">
       <section id="banner">
-        <h1>EVENTOS</h1>
+        <h1>EVENTOS DE MARVEL</h1>
       </section>
 
       <div className="container">

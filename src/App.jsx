@@ -15,7 +15,7 @@ import OrderPage from './pages/checkout/orderPage';
 
 import NotFoundPage from './pages/notFound';
 
-import UploadDataFirestore from './UploadDataFirestore';
+// import UploadDataFirestore from './UploadDataFirestore';
 
 function App() {
   return (

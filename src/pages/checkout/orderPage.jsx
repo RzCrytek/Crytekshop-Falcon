@@ -49,7 +49,7 @@ const OrderPage = () => {
               </picture>
               <div>
                 <h2>¡Gracias {buyer.name}!</h2>
-                <p style={{ fontSize: '12px' }}>Orden: #{order.id}</p>
+                <p style={{ fontSize: '12px' }}>Orden: {order.id}</p>
               </div>
             </div>
 
@@ -64,6 +64,11 @@ const OrderPage = () => {
             <div className="content-data-box">
               <h3>Tu número de orden</h3>
               <code>{order.id}</code>
+            </div>
+
+            <div className="content-data-box">
+              <h3>Método de pago al recibir el producto</h3>
+              <p>{order.method_payment}</p>
             </div>
 
             <div className="content-data-box">
