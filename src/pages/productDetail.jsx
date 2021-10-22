@@ -9,6 +9,8 @@ import Layout from './_layout';
 import Loader from '../components/Loader/Loader';
 import DetailView from '../components/pages/ProductDetail/DetailView';
 
+import { ReactComponent as IcoArrowLeft } from '../images/icons/arrow--left.svg';
+
 import NotFoundPage from './notFound';
 
 const ProductDetailPage = () => {
@@ -29,10 +31,7 @@ const ProductDetailPage = () => {
       <div className="options">
         <div className="container">
           <Link className="btn btn--back" to="/productos">
-            <i
-              className="ico"
-              style={{ backgroundImage: "url('/img/icons/arrow--left.svg')" }}
-            ></i>
+            <IcoArrowLeft className="ico" />
             Regresar
           </Link>
         </div>

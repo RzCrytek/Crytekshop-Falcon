@@ -4,6 +4,8 @@ import { useCartContext } from '../../context/CartContext';
 
 import styles from './CartWidget.module.scss';
 
+import { ReactComponent as IcoCartWhite } from '../../images/icons/cart--white.svg';
+
 const CartWidget = () => {
   const { cartWidgetAnimate, getQuantityProducts } = useCartContext();
 
@@ -23,7 +25,7 @@ const CartWidget = () => {
       id={styles['btn-card']}
       className={cartWidgetAnimate ? styles.added : ''}
     >
-      <img src="/img/icons/cart--white.svg" alt="Cart" />
+      <IcoCartWhite />
       <span className={`${styles.counter} ${quantity ? styles.more : ''}`}>
         {quantity}
       </span>
