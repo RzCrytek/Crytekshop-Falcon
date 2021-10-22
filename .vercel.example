@@ -1,0 +1,11 @@
+//TODO: una opción que capta todas las urls.
+{
+  "rewrites":  [
+    {"source": "/(.*)", "destination": "/"}
+  ]
+}
+
+//TODO: La mejor opción porque excluye los rutas que contengan "." como pueden ser los archivos
+{
+  "routes": [{ "src": "/[^.]+", "dest": "/", "status": 200 }]
+}
