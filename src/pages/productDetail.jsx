@@ -12,6 +12,7 @@ import DetailView from '../components/pages/ProductDetail/DetailView';
 import { ReactComponent as IcoArrowLeft } from '../images/icons/arrow--left.svg';
 
 import NotFoundPage from './notFound';
+import { ErrorBoundary } from 'react-error-boundary';
 
 const ProductDetailPage = () => {
   const { id } = useParams();
@@ -38,9 +39,25 @@ const ProductDetailPage = () => {
       </div>
 
       <div className="container">
-        {loader ? <Loader /> : <DetailView detail={product} />}
+        {loader ? (
+          <Loader />
+        ) : (
+          <ErrorBoundary FallbackComponent={ErrorBoundaryMessage}>
+            <DetailView detail={product} />
+          </ErrorBoundary>
+        )}
       </div>
     </Layout>
+  );
+};
+
+const ErrorBoundaryMessage = ({ error, resetErrorBoundary }) => {
+  return (
+    <div>
+      Ha habido un error en este componente:
+      <pre>{error.message}</pre>
+      <button onClick={resetErrorBoundary}>Intentar nuevamente</button>
+    </div>
   );
 };
 
