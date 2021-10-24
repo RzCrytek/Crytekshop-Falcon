@@ -11,7 +11,7 @@ import imageNoPhoto from '../../../images/no-photo.png';
 import icoCart from '../../../images/icons/cart--white.svg';
 
 const DetailView = ({ detail }) => {
-  console.log('detail:', detail);
+  // console.log('detail:', detail);
 
   const {
     images,
