@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { LsGetData, LsSaveData } from '../helpers/localStorage';
+import { LsGetData, LsRemoveData, LsSaveData } from '../helpers/localStorage';
 
 const CartContext = React.createContext();
 CartContext.displayName = 'CartContext';
@@ -18,20 +18,33 @@ export const CartProvider = ({ children }) => {
     LsSaveData('cart', cart);
   }, [cart]);
 
+  const validStockInCart = (newProduct) => {
+    return cart.some((item) =>
+      item.id === newProduct.id
+        ? item.quantity + newProduct.quantity > item.stock
+        : null
+    );
+  };
+
   const addProduct = (product, quantity) => {
     const newProduct = { ...product, quantity };
+
+    console.log('newProduct:', newProduct);
 
     // TODO: Find vs some: some devuelve true/false, find: el objeto. En performance, find es un poco más rápido
     const productInCart = cart.some((p) => p.id === newProduct.id);
 
     if (productInCart) {
+      const noStockInCart = validStockInCart(newProduct);
+      if (noStockInCart) return alert('No puede agregar más productos');
+
       const newCart = cart.map((item) =>
         item.id === newProduct.id
           ? { ...item, quantity: item.quantity + newProduct.quantity }
           : item
       );
 
-      return setCart(newCart);
+      setCart(newCart);
     }
 
     setCart([...cart, newProduct]);
@@ -42,9 +55,10 @@ export const CartProvider = ({ children }) => {
     return setCart(newCart);
   };
 
-  // const clearCart = () => {
-  //   setCart([]);
-  // };
+  const clearCart = () => {
+    setCart([]);
+    LsRemoveData('cart');
+  };
 
   const getQuantityProducts = () => {
     const quantity = cart.reduce((acumulado, el) => acumulado + el.quantity, 0);
@@ -85,6 +99,7 @@ export const CartProvider = ({ children }) => {
     setCartWidgetAnimate,
     addProduct,
     removeProduct,
+    clearCart,
     getQuantityProducts,
     getTotalPriceProducts,
     decreaseProduct,

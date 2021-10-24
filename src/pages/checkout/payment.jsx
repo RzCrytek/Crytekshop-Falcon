@@ -2,13 +2,19 @@ import React, { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
 import { useCartContext } from '../../context/CartContext';
-import { addDoc, collection } from '@firebase/firestore';
+import {
+  addDoc,
+  collection,
+  doc,
+  getDoc,
+  increment,
+  updateDoc,
+} from '@firebase/firestore';
 import db from '../../firebase/firebaseConfig';
 
 import Layout from './_layout';
 import ProductCart from '../../components/ProductCart/ProductCart';
 import OrderSummary from '../../components/OrderSummary/OrderSummary';
-// import { LsRemoveData } from '../../helpers/localStorage';
 
 const initialForm = {
   method_payment: '',
@@ -20,7 +26,8 @@ const initialForm = {
 };
 
 const PaymentPage = () => {
-  const { cart, getQuantityProducts, getTotalPriceProducts } = useCartContext();
+  const { cart, clearCart, getQuantityProducts, getTotalPriceProducts } =
+    useCartContext();
   const quantity = getQuantityProducts();
 
   const history = useHistory();
@@ -57,6 +64,28 @@ const PaymentPage = () => {
     console.log('submit', e);
     console.log('form: ', form);
 
+    const asyncFilter = async (cart, predicate) => {
+      const results = await Promise.all(cart.map(predicate));
+      return cart.filter((_v, index) => results[index]);
+    };
+
+    const asyncRes = await asyncFilter(cart, async (product) => {
+      const document = await getDoc(doc(db, 'products', product.id));
+      const stockInBd = document.data().stock;
+      return product.quantity > stockInBd;
+    });
+
+    console.log('asyncRes:', asyncRes);
+
+    if (asyncRes.length) {
+      asyncRes.map((product) =>
+        alert(
+          `el artículo ${product.title} no cuenta con la cantidad seleccionada`
+        )
+      );
+      return;
+    }
+
     const newOrder = {
       method_payment: form.method_payment,
       buyer: {
@@ -73,11 +102,23 @@ const PaymentPage = () => {
     console.log(newOrder);
 
     const docRef = await addDoc(collection(db, 'orders'), newOrder);
-    // console.log('Document written with ID: ', docRef);
-    // console.log('Document written with ID: ', docRef.id);
 
-    history.push('/checkout/order/' + docRef.id);
-    // LsRemoveData('cart');
+    console.log('pasó');
+    console.log('docRef:', docRef);
+
+    console.log('cart:', cart);
+
+    cart.map(async (product) => {
+      const documentRef = doc(db, 'products', product.id);
+      await updateDoc(documentRef, {
+        // stock: increment(-product.quantity),
+      });
+    });
+
+    console.log('pasó update');
+
+    // history.push('/checkout/order/' + docRef.id);
+    // clearCart();
   };
 
   return (
