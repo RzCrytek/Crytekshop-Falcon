@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 import { useCartContext } from '../../../context/CartContext';
 
@@ -25,18 +24,14 @@ const DetailView = ({ detail }) => {
   } = detail;
 
   const { setCartWidgetAnimate, addProduct } = useCartContext();
-
   const [amount, setAmount] = useState(1);
-  const [isAddProduct, setIsAddProduct] = useState(false);
 
   const inStock = !!(stock && stock > 0);
-
   const imageSrc = images?.length ? images[1].src : imageNoPhoto;
 
   const onAdd = () => {
     addProduct(detail, amount);
     setCartWidgetAnimate(true);
-    setIsAddProduct(isAddProduct);
 
     setTimeout(() => {
       setCartWidgetAnimate(false);
@@ -71,24 +66,16 @@ const DetailView = ({ detail }) => {
         </div>
 
         <div className={styles.wrap}>
-          {!isAddProduct && (
-            <ItemCount stock={stock} setAmount={setAmount} countDetail />
-          )}
+          <ItemCount stock={stock} setAmount={setAmount} countDetail />
 
-          {isAddProduct ? (
-            <Link to="/cart" className={`btn ${styles.btn}`}>
-              TERMINAR MI COMPRA
-            </Link>
-          ) : (
-            <button
-              className={`btn btn--animate-icon full ${styles.btn}`}
-              onClick={onAdd}
-              disabled={!inStock}
-            >
-              <img src={icoCart} alt="Cart" />
-              <span>AGREGAR A CARRITO</span>
-            </button>
-          )}
+          <button
+            className={`btn btn--animate-icon full ${styles.btn}`}
+            onClick={onAdd}
+            disabled={!inStock}
+          >
+            <img src={icoCart} alt="Cart" />
+            <span>AGREGAR A CARRITO</span>
+          </button>
         </div>
       </div>
     </div>
