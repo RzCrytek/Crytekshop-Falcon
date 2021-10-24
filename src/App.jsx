@@ -1,7 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { CartProvider } from './context/CartContext';
+
+// import './styles/app.scss';
 
 import HomePage from './pages/home';
 import EventsPage from './pages/events';
@@ -36,6 +41,17 @@ function App() {
           <Route path="*" component={NotFoundPage} />
         </Switch>
       </Router>
+      <ToastContainer
+        theme="light"
+        position={toast.POSITION.TOP_RIGHT}
+        autoClose={2500}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </CartProvider>
   );
 }

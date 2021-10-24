@@ -36,7 +36,7 @@ export const CartProvider = ({ children }) => {
 
     if (productInCart) {
       const noStockInCart = validStockInCart(newProduct);
-      if (noStockInCart) return alert('No puede agregar más productos');
+      if (noStockInCart) return noStockInCart;
 
       const newCart = cart.map((item) =>
         item.id === newProduct.id

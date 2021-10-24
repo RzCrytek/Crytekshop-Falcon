@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
+import { toast } from 'react-toastify';
+
 import { useCartContext } from '../../context/CartContext';
 import {
   addDoc,
@@ -78,9 +80,10 @@ const PaymentPage = () => {
     console.log('asyncRes:', asyncRes);
 
     if (asyncRes.length) {
-      asyncRes.map((product) =>
-        alert(
-          `el artículo ${product.title} no cuenta con la cantidad seleccionada`
+      asyncRes.map((product, index) =>
+        toast.warn(
+          `¡El artículo ${product.title} no cuenta con la cantidad seleccionada!`,
+          { delay: 1000 * (index + 1) }
         )
       );
       return;

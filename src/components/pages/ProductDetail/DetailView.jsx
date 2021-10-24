@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import { toast } from 'react-toastify';
+
 import { useCartContext } from '../../../context/CartContext';
 
 import styles from './DetailView.module.scss';
@@ -30,7 +32,13 @@ const DetailView = ({ detail }) => {
   const imageSrc = images?.length ? images[1].src : imageNoPhoto;
 
   const onAdd = () => {
-    addProduct(detail, amount);
+    const noStock = addProduct(detail, amount);
+
+    if (noStock)
+      return toast.warn('¡Este producto supera el stock en el carrito!');
+
+    console.log('noStock:', noStock);
+    toast.success('Se agregó al carrito');
     setCartWidgetAnimate(true);
 
     setTimeout(() => {
