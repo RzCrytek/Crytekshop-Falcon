@@ -12,17 +12,15 @@ import imageNoPhoto from '../../../images/no-photo.png';
 import icoCart from '../../../images/icons/cart--white.svg';
 
 const DetailView = ({ detail }) => {
-  // console.log('detail:', detail);
-
   const {
     images,
     brand,
     title,
     sku,
+    stock,
     description,
     price,
     original_price,
-    stock,
   } = detail;
 
   const { setCartWidgetAnimate, addProduct } = useCartContext();
@@ -37,8 +35,7 @@ const DetailView = ({ detail }) => {
     if (noStock)
       return toast.warn('¡Este producto supera el stock en el carrito!');
 
-    console.log('noStock:', noStock);
-    toast.success('Se agregó al carrito');
+    toast.success('¡Se agregó al carrito!');
     setCartWidgetAnimate(true);
 
     setTimeout(() => {
@@ -58,7 +55,7 @@ const DetailView = ({ detail }) => {
         <h2>Tipo: {brand}</h2>
         <h1>{title}</h1>
         <p>
-          <strong>SKU:</strong> {sku}
+          <strong>SKU:</strong> {sku} | <strong>Stock:</strong> {stock}
         </p>
         <div
           className={styles.description}

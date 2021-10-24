@@ -114,14 +114,14 @@ const PaymentPage = () => {
     cart.map(async (product) => {
       const documentRef = doc(db, 'products', product.id);
       await updateDoc(documentRef, {
-        // stock: increment(-product.quantity),
+        stock: increment(-product.quantity),
       });
     });
 
     console.log('pasó update');
 
-    // history.push('/checkout/order/' + docRef.id);
-    // clearCart();
+    history.push('/checkout/order/' + docRef.id);
+    clearCart();
   };
 
   return (
