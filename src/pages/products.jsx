@@ -3,7 +3,7 @@ import { useParams } from 'react-router';
 import { NavLink } from 'react-router-dom';
 
 import useGetDocs from '../hooks/useGetDocs';
-import useGetDocsFilter from '../hooks/useGetDocsFilter';
+import useGetDocsFilterOnSnapshot from '../hooks/useGetDocsFilterOnSnapshot';
 
 import Layout from './_layout';
 import Loader from '../components/Loader/Loader';
@@ -23,7 +23,10 @@ const ProductsPage = () => {
 
   const filterQuery = paramData ? ['categoryKey', '==', paramData.key] : '';
 
-  const { data: products, loader } = useGetDocsFilter('products', filterQuery);
+  const { data: products, loader } = useGetDocsFilterOnSnapshot(
+    'products',
+    filterQuery
+  );
 
   return (
     <Layout pageId="products">

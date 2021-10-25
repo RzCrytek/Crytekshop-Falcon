@@ -14,6 +14,7 @@ import DetailView from '../components/pages/ProductDetail/DetailView';
 import { ReactComponent as IcoArrowLeft } from '../images/icons/arrow--left.svg';
 
 import NotFoundPage from './notFound';
+import useGetDocOnSnapshot from '../hooks/useGetDocOnSnapshot';
 
 const ProductDetailPage = () => {
   const { id } = useParams();
@@ -22,7 +23,7 @@ const ProductDetailPage = () => {
     document: product,
     loader,
     isDocument: isProduct,
-  } = useGetDoc('products', id);
+  } = useGetDocOnSnapshot('products', id);
 
   console.log('product:', product);
 

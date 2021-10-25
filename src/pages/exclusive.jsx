@@ -1,5 +1,5 @@
 import React from 'react';
-import useGetDocsFilter from '../hooks/useGetDocsFilter';
+import useGetDocsFilterOnSnapshot from '../hooks/useGetDocsFilterOnSnapshot';
 
 import Layout from './_layout';
 import Loader from '../components/Loader/Loader';
@@ -7,7 +7,10 @@ import ProductCard from '../components/ProductCard/ProductCard';
 
 const ExclusivePage = () => {
   const filterQuery = ['exclusive', '==', true];
-  const { data: products, loader } = useGetDocsFilter('products', filterQuery);
+  const { data: products, loader } = useGetDocsFilterOnSnapshot(
+    'products',
+    filterQuery
+  );
 
   return (
     <Layout pageId="products">

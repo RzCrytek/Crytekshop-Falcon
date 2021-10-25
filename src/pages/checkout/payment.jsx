@@ -75,6 +75,8 @@ const PaymentPage = () => {
       });
     });
 
+    toast.success(`¡Compra realizada!`);
+
     history.push('/checkout/order/' + docRef.id);
     clearCart();
   };
