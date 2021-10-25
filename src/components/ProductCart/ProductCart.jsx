@@ -5,8 +5,6 @@ import styles from './ProductCart.module.scss';
 import imageNoPhoto from '../../images/no-photo.png';
 
 const ProductCart = ({ product, removeProduct, ProductCartReadOnly }) => {
-  console.log('product cart:', product);
-
   const {
     images,
     brand,

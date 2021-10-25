@@ -24,8 +24,6 @@ const ProductDetailPage = () => {
     isDocument: isProduct,
   } = useGetDocOnSnapshot('products', id);
 
-  console.log('product:', product);
-
   if (!isProduct) return <NotFoundPage />;
 
   return (

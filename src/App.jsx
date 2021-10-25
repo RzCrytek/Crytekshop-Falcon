@@ -6,8 +6,6 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { CartProvider } from './context/CartContext';
 
-// import './styles/app.scss';
-
 import HomePage from './pages/home';
 import EventsPage from './pages/events';
 import ExclusivePage from './pages/exclusive';

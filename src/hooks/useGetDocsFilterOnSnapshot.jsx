@@ -27,7 +27,6 @@ const useGetDocsFilterOnSnapshot = (collectionName, filterQuery = []) => {
     }
 
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
-      console.log('querySnapshot:', querySnapshot.docs);
       const arrQuerySnapshot = querySnapshot.docs.map((document) => ({
         id: document.id,
         ...document.data(),

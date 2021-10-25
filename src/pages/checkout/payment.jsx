@@ -38,8 +38,6 @@ const PaymentPage = () => {
       return product.quantity > stockInBd;
     });
 
-    console.log('asyncRes:', asyncRes);
-
     if (asyncRes.length) {
       asyncRes.map((product, index) =>
         toast.warn(
@@ -63,10 +61,7 @@ const PaymentPage = () => {
       total: getTotalPriceProducts(),
     };
 
-    console.log(newOrder);
-
     const docRef = await addDoc(collection(db, 'orders'), newOrder);
-    console.log('docRef:', docRef);
 
     cart.map(async (product) => {
       const documentRef = doc(db, 'products', product.id);

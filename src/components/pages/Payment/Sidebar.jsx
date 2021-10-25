@@ -10,16 +10,9 @@ const Sidebar = () => {
   return (
     <>
       <div className="ordered-products">
-        {cart.map((product) => {
-          console.log('product: ', product);
-          return (
-            <ProductCart
-              product={product}
-              key={product.id}
-              ProductCartReadOnly
-            />
-          );
-        })}
+        {cart.map((product) => (
+          <ProductCart product={product} key={product.id} ProductCartReadOnly />
+        ))}
       </div>
       <OrderSummary
         quantity={getQuantityProducts()}

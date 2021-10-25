@@ -135,16 +135,13 @@ const OrderPage = () => {
         <aside className="summary-sidebar">
           <div className="sidebar-content">
             <div className="ordered-products">
-              {items.map((product) => {
-                console.log('product: ', product);
-                return (
-                  <ProductCart
-                    product={product}
-                    key={product.id}
-                    ProductCartReadOnly
-                  />
-                );
-              })}
+              {items.map((product) => (
+                <ProductCart
+                  product={product}
+                  key={product.id}
+                  ProductCartReadOnly
+                />
+              ))}
             </div>
 
             <div className="order-summary">

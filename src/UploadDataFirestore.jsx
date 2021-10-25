@@ -443,13 +443,13 @@ function UploadDataFirestore() {
     ];
 
     const uploadData = () => {
-      let canti = 0;
+      let cant = 0;
 
       products.forEach(async (product) => {
         const docRef = await addDoc(collection(db, 'products'), product);
-        canti++;
+        cant++;
         console.log('Document written with ID: ', docRef.id);
-        console.log(`Se agregó: ${canti} datos`);
+        console.log(`Se agregó: ${cant} datos`);
       });
     };
 
@@ -486,8 +486,8 @@ function UploadDataFirestore() {
       });
     };
 
-    // uploadData();
-    // withReference();
+    uploadData();
+    withReference();
   }, []);
 
   return (

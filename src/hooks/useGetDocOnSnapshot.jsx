@@ -15,7 +15,6 @@ const useGetDocOnSnapshot = (collection, documentId) => {
   useEffect(() => {
     const unsubscribe = onSnapshot(doc(db, collection, documentId), (doc) => {
       if (doc.exists()) {
-        console.log('Document data:', doc.data());
         setDocument((prev) => ({
           ...prev,
           document: { id: doc.id, ...doc.data() },
@@ -23,7 +22,7 @@ const useGetDocOnSnapshot = (collection, documentId) => {
         }));
       } else {
         setDocument((prev) => ({ ...prev, isDocument: false, loader: false }));
-        console.log('No existe el documento y/o producto');
+        console.warn('No existe el documento y/o producto');
       }
     });
 

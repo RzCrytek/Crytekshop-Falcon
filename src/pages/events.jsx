@@ -6,7 +6,6 @@ import Loader from '../components/Loader/Loader';
 
 const EventsPage = () => {
   const { data: events, loader } = useFetchProducts('/events');
-  console.log('events:', events);
 
   return (
     <Layout pageId="events">

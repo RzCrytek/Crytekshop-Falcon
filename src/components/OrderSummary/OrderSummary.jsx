@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import style from './OrderSummary.module.scss';
 
 const OrderSummary = ({ quantity, totalPriceProducts, SummaryReadOnly }) => {
-  console.log('SummaryReadOnly:', SummaryReadOnly);
   return (
     <div className={style.order_summary}>
       <div className={`${style.summary_row} ${style.subtotal}`}>

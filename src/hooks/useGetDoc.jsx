@@ -16,10 +16,7 @@ const useGetDoc = (collection, documentId) => {
     const getDocument = async () => {
       const docSnap = await getDoc(doc(db, collection, documentId));
 
-      console.log('docSnap:', docSnap.data());
-
       if (docSnap.exists()) {
-        console.log('Document data:', docSnap.data());
         setDocument((prev) => ({
           ...prev,
           document: { id: docSnap.id, ...docSnap.data() },
@@ -27,7 +24,7 @@ const useGetDoc = (collection, documentId) => {
         }));
       } else {
         setDocument((prev) => ({ ...prev, isDocument: false, loader: false }));
-        console.log('No existe el documento y/o producto');
+        console.warn('No existe el documento y/o producto');
       }
     };
 
