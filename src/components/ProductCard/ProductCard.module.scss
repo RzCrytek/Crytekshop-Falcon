@@ -18,8 +18,27 @@
       transform: translate3d(0, -2%, 0);
     }
 
-    .summary {
-      border-top: 1px solid $white;
+    // .summary {
+    //   border-top: 1px solid $white;
+    // }
+  }
+
+  &.out_stock {
+    position: relative;
+    pointer-events: none;
+
+    &:after {
+      @extend %font-robotoC;
+      content: 'SOLD OUT';
+      background-color: rgba($white, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
   }
 
