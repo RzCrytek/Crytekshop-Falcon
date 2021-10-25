@@ -1,6 +1,15 @@
 import React, { useEffect, useState } from 'react';
 
-const Form = ({ initialForm, setFormData }) => {
+const initialForm = {
+  method_payment: '',
+  email: '',
+  name: '',
+  last_name: '',
+  address: '',
+  phone: '',
+};
+
+const Form = ({ handleSubmit }) => {
   const [form, setForm] = useState(initialForm);
   const [formErrors, setFormErrors] = useState(true);
 
@@ -26,15 +35,11 @@ const Form = ({ initialForm, setFormData }) => {
       ...form,
       [name]: value,
     });
-
-    setFormData((initial) => ({
-      ...initial,
-      [name]: value,
-    }));
   };
 
   return (
-    <>
+    <form onSubmit={(e) => handleSubmit(e, form)}>
+      <pre>{JSON.stringify(form, null, 2)}</pre>
       <h2>Método de pago en su domicilio</h2>
 
       <div className="form-half auto">
@@ -144,7 +149,7 @@ const Form = ({ initialForm, setFormData }) => {
       <button className="btn" type="submit" disabled={formErrors}>
         FINALIZAR COMPRA
       </button>
-    </>
+    </form>
   );
 };
 

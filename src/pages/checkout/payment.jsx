@@ -18,24 +18,13 @@ import Layout from './_layout';
 import Sidebar from '../../components/pages/Payment/Sidebar';
 import Form from '../../components/pages/Payment/Form';
 
-const initialForm = {
-  method_payment: '',
-  email: '',
-  name: '',
-  last_name: '',
-  address: '',
-  phone: '',
-};
-
 const PaymentPage = () => {
   const history = useHistory();
 
   const { cart, clearCart, getQuantityProducts, getTotalPriceProducts } =
     useCartContext();
 
-  const [formData, setFormData] = useState(initialForm);
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e, form) => {
     e.preventDefault();
 
     const asyncFilter = async (cart, predicate) => {
@@ -62,11 +51,11 @@ const PaymentPage = () => {
     }
 
     const newOrder = {
-      method_payment: formData.method_payment,
+      method_payment: form.method_payment,
       buyer: {
-        name: formData.name,
-        phone: formData.phone,
-        email: formData.email,
+        name: form.name,
+        phone: form.phone,
+        email: form.email,
       },
       items: [...cart],
       fecha: new Date(),
@@ -103,10 +92,7 @@ const PaymentPage = () => {
           </ol>
         </nav>
 
-        <pre>{JSON.stringify(formData, null, 2)}</pre>
-        <form onSubmit={handleSubmit}>
-          <Form initialForm={initialForm} setFormData={setFormData} />
-        </form>
+        <Form handleSubmit={handleSubmit} />
       </Layout.Information>
 
       <Layout.Sidebar>
