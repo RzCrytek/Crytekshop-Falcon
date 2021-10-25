@@ -10,6 +10,11 @@
 .col {
   width: 50%;
   padding-inline: 48px;
+
+  @media (max-width: 991px) {
+    width: 100%;
+    padding-inline: 24px;
+  }
 }
 
 .imageContent {
@@ -29,6 +34,10 @@
   @extend .col;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 991px) {
+    padding-top: 40px;
+  }
 
   h1 {
     margin-block: 16px;

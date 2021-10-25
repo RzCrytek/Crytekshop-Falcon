@@ -16,6 +16,10 @@
     display: flex;
     max-width: 1260px;
     padding-inline: 5%;
+
+    @media (max-width: 991px) {
+      flex-direction: column-reverse;
+    }
   }
 
   .information {
@@ -24,6 +28,11 @@
     padding-top: 32px;
     padding-right: 6%;
     padding-bottom: 5%;
+
+    @media (max-width: 991px) {
+      width: 100%;
+      padding-right: 0;
+    }
 
     &:before {
       content: '';
@@ -36,6 +45,10 @@
       background-color: $white;
       box-shadow: -1px 0 0 #e1e1e1 inset;
       z-index: -1;
+
+      @media (max-width: 991px) {
+        margin-right: -5%;
+      }
     }
   }
 
@@ -44,6 +57,10 @@
     width: 42%;
     padding-top: 32px;
     padding-left: 5%;
+
+    @media (max-width: 991px) {
+      width: 100%;
+    }
 
     .sidebar-content {
       display: flex;

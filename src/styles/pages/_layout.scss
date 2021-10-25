@@ -32,6 +32,11 @@ strong {
 .main {
   min-height: calc(100vh - 60px - 49px);
 
+  @media (max-width: 600px) {
+    height: auto;
+    min-height: auto;
+  }
+
   // .container {
   //   padding-block: 40px;
   // }

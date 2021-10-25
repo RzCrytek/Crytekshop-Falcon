@@ -9,21 +9,38 @@
   left: 0;
   z-index: 2;
 
+  @media (max-width: 600px) {
+    height: auto;
+    padding-block: 15px;
+  }
+
   .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 100%;
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+    }
   }
 
   .nav {
     display: flex;
     color: $white;
 
+    @media (max-width: 600px) {
+      margin-top: 15px;
+    }
+
     .menu {
       display: flex;
       align-items: center;
       margin-right: 16px;
+
+      @media (max-width: 600px) {
+        margin-right: 8px;
+      }
 
       li {
         a {
@@ -32,6 +49,10 @@
           text-decoration: none;
           padding-inline: 16px;
           transition: $t-1;
+
+          @media (max-width: 767px) {
+            padding-inline: 8px;
+          }
 
           &.active,
           &:hover {
@@ -47,6 +68,15 @@
 
       .btn {
         width: 150px;
+
+        @media (max-width: 767px) {
+          width: auto;
+        }
+
+        @media (max-width: 600px) {
+          font-size: 16px;
+          padding-inline: 8px;
+        }
       }
     }
   }

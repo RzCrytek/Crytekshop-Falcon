@@ -8,6 +8,8 @@
 
     .container {
       display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
     .item {
@@ -16,6 +18,14 @@
       width: calc(100% / 4);
       padding: 8px;
       height: 100px;
+
+      @media (max-width: 767px) {
+        width: calc(100% / 2);
+      }
+
+      @media (max-width: 400px) {
+        width: 100%;
+      }
 
       .icon {
         display: flex;
