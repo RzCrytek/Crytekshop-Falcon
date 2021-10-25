@@ -58,13 +58,7 @@ const ProductsPage = () => {
         <section className="cards-box">
           {loader && <Loader />}
           {products.map((product) => {
-            return (
-              <ProductCard
-                key={product.id}
-                product={product}
-                typeProduct={true}
-              />
-            );
+            return <ProductCard key={product.id} product={product} />;
           })}
         </section>
       </div>

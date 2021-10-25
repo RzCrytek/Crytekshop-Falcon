@@ -22,11 +22,7 @@ const ExclusivePage = () => {
         <section className="cards-box">
           {loader && <Loader />}
           {products.map((product) => (
-            <ProductCard
-              key={product.id}
-              product={product}
-              typeProduct={true}
-            />
+            <ProductCard key={product.id} product={product} />
           ))}
         </section>
       </div>
