@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import { useCartContext } from '../context/CartContext';
 
 import Layout from './_layout';
-import ProductCart from '../components/ProductCart/ProductCart';
-import OrderSummary from '../components/OrderSummary/OrderSummary';
+
+import { OrderSummary, ProductCart } from '../components';
 
 const CartPage = () => {
   const { cart, removeProduct, getQuantityProducts, getTotalPriceProducts } =

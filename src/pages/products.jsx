@@ -6,8 +6,8 @@ import useGetDocs from '../hooks/useGetDocs';
 import useGetDocsFilterOnSnapshot from '../hooks/useGetDocsFilterOnSnapshot';
 
 import Layout from './_layout';
-import Loader from '../components/Loader/Loader';
-import ProductCard from '../components/ProductCard/ProductCard';
+
+import { Loader, ProductCard } from '../components';
 
 const ProductsPage = () => {
   const { category: categoryParam } = useParams();

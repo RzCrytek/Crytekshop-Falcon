@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom';
 
 import useGetDoc from '../../hooks/useGetDoc';
 
-import Loader from '../../components/Loader/Loader';
-import OrderSummary from '../../components/OrderSummary/OrderSummary';
-import ProductCart from '../../components/ProductCart/ProductCart';
+import { Loader, OrderSummary, ProductCart } from '../../components';
 
 import imageLogo from '../../images/logo.svg';
 import imageConfirmedOutline from '../../images/icons/confirmed-outline.svg';

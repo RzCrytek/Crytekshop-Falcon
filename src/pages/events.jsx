@@ -2,7 +2,7 @@ import React from 'react';
 import useFetchProducts from '../hooks/useFetchProducts';
 
 import Layout from './_layout';
-import Loader from '../components/Loader/Loader';
+import { Loader } from '../components';
 
 const EventsPage = () => {
   const { data: events, loader } = useFetchProducts('/events');

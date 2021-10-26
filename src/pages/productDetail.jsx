@@ -8,7 +8,8 @@ import { ErrorBoundary } from 'react-error-boundary';
 import useGetDocOnSnapshot from '../hooks/useGetDocOnSnapshot';
 
 import Layout from './_layout';
-import Loader from '../components/Loader/Loader';
+
+import { Loader } from '../components';
 import DetailView from '../components/pages/ProductDetail/DetailView';
 
 import { ReactComponent as IcoArrowLeft } from '../images/icons/arrow--left.svg';

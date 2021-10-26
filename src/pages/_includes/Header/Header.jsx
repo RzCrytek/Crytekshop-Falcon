@@ -6,7 +6,7 @@ import { useCartContext } from '../../../context/CartContext';
 import './Header.scss';
 import imageLogo from '../../../images/logo.svg';
 
-import CartWidget from '../../../components/CartWidget/CartWidget';
+import { CartWidget } from '../../../components';
 
 const Header = () => {
   const { getQuantityProducts } = useCartContext();
