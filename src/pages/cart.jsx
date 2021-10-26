@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { useCartContext } from '../context/CartContext';
 
 import Layout from './_layout';
-
 import { OrderSummary, ProductCart } from '../components';
 
 const CartPage = () => {

@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 
@@ -8,13 +7,12 @@ import { ErrorBoundary } from 'react-error-boundary';
 import useGetDocOnSnapshot from '../hooks/useGetDocOnSnapshot';
 
 import Layout from './_layout';
-
 import { Loader } from '../components';
 import DetailView from '../components/pages/ProductDetail/DetailView';
 
-import { ReactComponent as IcoArrowLeft } from '../images/icons/arrow--left.svg';
-
 import NotFoundPage from './notFound';
+
+import { ReactComponent as IcoArrowLeft } from '../images/icons/arrow--left.svg';
 
 const ProductDetailPage = () => {
   const { id } = useParams();

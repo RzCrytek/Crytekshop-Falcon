@@ -1,4 +1,5 @@
 import React from 'react';
+
 import useFetchProducts from '../hooks/useFetchProducts';
 
 import Layout from './_layout';

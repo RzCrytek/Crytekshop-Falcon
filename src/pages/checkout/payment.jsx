@@ -3,7 +3,6 @@ import { Link, useHistory } from 'react-router-dom';
 
 import { toast } from 'react-toastify';
 
-import { useCartContext } from '../../context/CartContext';
 import {
   addDoc,
   collection,
@@ -14,9 +13,10 @@ import {
 } from '@firebase/firestore';
 import db from '../../firebase/firebaseConfig';
 
+import { useCartContext } from '../../context/CartContext';
+
 import Layout from './_layout';
-import Sidebar from '../../components/pages/Payment/Sidebar';
-import Form from '../../components/pages/Payment/Form';
+import { Form, Sidebar } from '../../components/pages/Payment';
 
 const PaymentPage = () => {
   const history = useHistory();
