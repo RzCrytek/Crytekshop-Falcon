@@ -29,7 +29,6 @@ export const CartProvider = ({ children }) => {
   const addProduct = (product, quantity) => {
     const newProduct = { ...product, quantity };
 
-    // TODO: Find vs some: some devuelve true/false, find: el objeto. En performance, find es un poco más rápido
     const productInCart = cart.some((p) => p.id === newProduct.id);
 
     if (productInCart) {

@@ -10,15 +10,12 @@ import { Loader, ProductCard } from '../components';
 
 const ProductsPage = () => {
   const { category: categoryParam } = useParams();
-  console.log('categoryParam:', categoryParam);
 
   const { data: categories } = useGetDocs('categories');
-  console.log('categories:', categories);
 
   const paramData = categories.find(
     (document) => document.slug === categoryParam
   );
-  console.log('paramData:', paramData);
 
   const filterQuery = paramData ? ['categoryKey', '==', paramData.key] : '';
 

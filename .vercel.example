@@ -9,3 +9,5 @@
 {
   "routes": [{ "src": "/[^.]+", "dest": "/", "status": 200 }]
 }
+
+// TODO: Find vs some: some devuelve true/false, find: el objeto. En performance, find es un poco más rápido
