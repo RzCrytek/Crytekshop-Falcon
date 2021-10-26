@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// import OrderSummary from '../../components/OrderSummary/OrderSummary';
-
 import imageLogo from '../../images/logo.svg';
 
 function Layout({ children, pageId }) {

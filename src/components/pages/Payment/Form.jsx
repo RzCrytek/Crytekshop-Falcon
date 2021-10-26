@@ -39,7 +39,7 @@ const Form = ({ handleSubmit }) => {
 
   return (
     <form onSubmit={(e) => handleSubmit(e, form)}>
-      <pre>{JSON.stringify(form, null, 2)}</pre>
+      {/* <pre>{JSON.stringify(form, null, 2)}</pre> */}
       <h2>Método de pago en su domicilio</h2>
 
       <div className="form-half auto">

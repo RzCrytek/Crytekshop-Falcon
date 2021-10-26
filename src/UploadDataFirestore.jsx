@@ -1,5 +1,6 @@
-import { addDoc, collection, doc, setDoc } from '@firebase/firestore';
 import React, { useEffect } from 'react';
+
+import { addDoc, collection, doc, setDoc } from '@firebase/firestore';
 import db from './firebase/firebaseConfig';
 
 function UploadDataFirestore() {
