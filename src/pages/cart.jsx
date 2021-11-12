@@ -52,15 +52,17 @@ const CartPage = () => {
           )}
         </div>
 
-        <aside className="cart-summary">
-          <div className="summary-content">
-            <h2>RESUMEN DE TU PEDIDO</h2>
-            <OrderSummary
-              quantity={quantity}
-              totalPriceProducts={getTotalPriceProducts()}
-            />
-          </div>
-        </aside>
+        {cart.length > 0 && (
+          <aside className="cart-summary">
+            <div className="summary-content">
+              <h2>RESUMEN DE TU PEDIDO</h2>
+              <OrderSummary
+                quantity={quantity}
+                totalPriceProducts={getTotalPriceProducts()}
+              />
+            </div>
+          </aside>
+        )}
       </div>
     </Layout>
   );
